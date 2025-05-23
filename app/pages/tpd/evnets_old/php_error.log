@@ -1,0 +1,142 @@
+[01-Apr-2025 11:05:01 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:05:01 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:05:04 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:05:04 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:05:41 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:05:41 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:09:45 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:09:45 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:13:39 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:13:39 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:13:55 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:13:55 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:14:03 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:14:03 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:14:22 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:14:22 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:14:30 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+[01-Apr-2025 11:14:30 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 13
+add_event_process.php started at 2025-04-01 11:24:01
+[01-Apr-2025 11:24:01 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 11:24:01 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 11:26:06
+[01-Apr-2025 11:26:06 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 11:26:06 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 11:26:14
+[01-Apr-2025 11:26:14 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 11:26:14 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 11:43:37
+[01-Apr-2025 11:43:37 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 11:43:37 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 11:51:01
+[01-Apr-2025 11:51:01 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 11:51:01 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 12:06:57
+[01-Apr-2025 12:06:57 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 12:06:57 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 12:07:02
+[01-Apr-2025 12:07:02 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 12:07:02 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 12:07:11
+[01-Apr-2025 12:07:11 Africa/Accra] PHP Warning:  require_once(../../config/db.php): failed to open stream: No such file or directory in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+[01-Apr-2025 12:07:11 Africa/Accra] PHP Fatal error:  require_once(): Failed opening required '../../config/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\events\add_event_process.php on line 16
+add_event_process.php started at 2025-04-01 12:12:17
+POST data: Array
+(
+    [title] => Sunday Service
+    [event_type_id] => 2
+    [description] => 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 62
+)
+
+Extracted data: title=Sunday Service, event_type_id=2, start_time=08:30, duration=240, created_by=62, start_date=, end_date=
+Validating created_by: 62
+Validating event_type_id: 2
+Processing 7 assembly_ids
+Validating assembly_id: 3
+Inserting event for assembly_id: 3
+Generating recurring instances for event_id: 1
+Inserted 0 recurring event instances for event_id 1
+Validating assembly_id: 2
+Inserting event for assembly_id: 2
+Generating recurring instances for event_id: 2
+Inserted 0 recurring event instances for event_id 2
+Validating assembly_id: 7
+Inserting event for assembly_id: 7
+Generating recurring instances for event_id: 3
+Inserted 0 recurring event instances for event_id 3
+Validating assembly_id: 6
+Inserting event for assembly_id: 6
+Generating recurring instances for event_id: 4
+Inserted 0 recurring event instances for event_id 4
+Validating assembly_id: 8
+Inserting event for assembly_id: 8
+Generating recurring instances for event_id: 5
+Inserted 0 recurring event instances for event_id 5
+Validating assembly_id: 5
+Inserting event for assembly_id: 5
+Generating recurring instances for event_id: 6
+Inserted 0 recurring event instances for event_id 6
+Validating assembly_id: 4
+Inserting event for assembly_id: 4
+Generating recurring instances for event_id: 7
+Inserted 0 recurring event instances for event_id 7
+Response sent: {"success":true,"message":"7 event(s) added successfully!"}
+add_event_process.php started at 2025-04-01 12:53:07
+POST data: Array
+(
+    [title] => Shai hills Household Outreach 
+    [event_type_id] => 6
+    [description] => Shai Hills outreach household level 
+    [levels] => Array
+        (
+            [0] => household
+        )
+
+    [household_ids] => Array
+        (
+            [0] => 11
+        )
+
+    [location] => Shai hills 
+    [start_time] => 08:30
+    [duration] => 90
+    [start_date] => 2025-04-05T19:30
+    [end_date] => 2025-04-05T08:52
+    [frequency] => weekly
+    [recurrence_day] => 
+    [created_by] => 62
+)
+
+Extracted data: title=Shai hills Household Outreach , event_type_id=6, start_time=08:30, duration=90, created_by=62, start_date=, end_date=
+Validating created_by: 62
+Validating event_type_id: 6
+Processing 1 assembly_ids
+Validating household_id: 11
+Inserting event for assembly_id: 
+Generating recurring instances for event_id: 8
+Inserted 0 recurring event instances for event_id 8
+Response sent: {"success":true,"message":"1 event(s) added successfully!"}

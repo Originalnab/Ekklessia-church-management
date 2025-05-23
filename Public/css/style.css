@@ -1,0 +1,491 @@
+/* Variables */
+:root {
+    --header-bg-dark: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+    --header-bg-light: linear-gradient(135deg, #1e90ff 0%, #0047ab 100%);
+    --text-dark: #f8f9fa;
+    --text-light: #212529;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --card-bg-dark: hsla(267, 57.90%, 3.70%, 0.42);
+}
+
+/* Dark/Light Theme Header */
+.top-header {
+    background: var(--header-bg-light);
+    color: var(--text-dark);
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+[data-bs-theme="dark"] .top-header {
+    background: var(--header-bg-dark);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Navigation (used for navbar-custom if needed in future) */
+.navbar-custom {
+    background-color: transparent !important;
+    padding: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="light"] .navbar-custom {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+    padding: 0.75rem 1.25rem !important;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="light"] .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Notification */
+.notification-icon {
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.notification-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.35rem;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    border: none;
+    background: none;
+    color: inherit;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.brand-logo {
+    font-weight: 700;
+    /* Increased weight to make it bolder */
+    letter-spacing: -0.5px;
+    font-size: 1.25rem;
+    text-decoration: none !important;
+    /* Force no underline */
+    color: white !important;
+    /* Force white color in all modes */
+}
+
+.brand-logo:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 768px) {
+    .top-header {
+        padding: 1rem;
+    }
+
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+
+    .nav-link {
+        padding: 0.75rem !important;
+    }
+}
+
+/* Dark Theme Card Styling */
+[data-bs-theme="dark"] .card {
+    background-color: var(--card-bg-dark) !important;
+    border-color: var(--card-border-dark) !important;
+}
+
+/* Optional: Add subtle transition effect */
+.card {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Adjust text colors in dark mode */
+[data-bs-theme="dark"] .card h3,
+[data-bs-theme="dark"] .card .text-muted {
+    color: #e0e0e0 !important;
+}
+
+/* Padding to body to prevent content overlap with fixed header */
+body {
+    padding-top: 90px;
+}
+
+/* Assembly Index Styles */
+.progress {
+    height: 25px;
+    border-radius: 20px;
+}
+
+.progress-bar {
+    background-color: #6610f2;
+    font-weight: 500;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(102, 16, 242, 0.05);
+}
+
+.filter-icon {
+    background-color: #6610f2;
+    color: white;
+    border: none;
+}
+
+/* Modal and Alert Styles */
+.modal .form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    max-width: 400px;
+}
+
+.badge {
+    cursor: pointer;
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}
+
+.modal-table th,
+.modal-table td {
+    padding: 8px 12px;
+    text-align: left;
+    background-color: #f8f9fa;
+    border: none;
+}
+
+.modal-table th {
+    font-weight: 600;
+    color: #333;
+}
+
+.modal-table td {
+    color: #555;
+}
+
+.modal-table tr {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal and backdrop fixes */
+.modal-backdrop {
+    opacity: 0.5 !important;
+    transition: none !important;
+}
+
+.modal {
+    transition: none !important;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.2s ease-out !important;
+    transform: translate(0, -50px) !important;
+}
+
+.modal.show .modal-dialog {
+    transform: none !important;
+}
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: none !important;
+}
+
+/* Remove transform effects from modal buttons */
+.modal .btn {
+    transform: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Fix for delete button hover */
+.delete-member-btn,
+.confirm-delete-btn {
+    transition: background-color 0.2s ease !important;
+    transform: none !important;
+}
+
+.delete-member-btn:hover,
+.confirm-delete-btn:hover {
+    transform: none !important;
+}
+
+/* Navigation Card Styling */
+.nav-card {
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 -2px 6px -2px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Updated to include top shadow */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+[data-bs-theme="dark"] .nav-card {
+    background-color: var(--card-bg-dark);
+}
+
+[data-bs-theme="dark"] .nav-card h5 {
+    color: #e0e0e0;
+}
+
+.nav-card .nav-link-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+[data-bs-theme="dark"] .nav-link-btn {
+    color: #e0e0e0;
+}
+
+.nav-link-btn:hover {
+    background-color: #f1f3f5;
+    transform: scale(1.05);
+}
+
+[data-bs-theme="dark"] .nav-link-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.nav-link-btn span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    position: absolute;
+    z-index: 1050;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure dropdowns appear above other elements */
+.btn-group .dropdown-menu {
+    min-width: 10rem;
+    z-index: 1050;
+}
+
+/* Proper dropdown toggle styling */
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+/* Dropdown items styling */
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    clear: both;
+    white-space: nowrap;
+    border: 0;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: var(--bs-dropdown-link-hover-bg, #f8f9fa);
+    text-decoration: none;
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover,
+[data-bs-theme="dark"] .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* Responsive dropdown positioning */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: absolute;
+        left: 0;
+        right: auto;
+        width: auto;
+        min-width: 200px;
+    }
+
+    .dropdown-menu-end {
+        right: 0;
+        left: auto;
+    }
+}
+
+/* Improve dropdown accessibility */
+.dropdown-toggle:focus {
+    outline: 2px solid rgba(13, 110, 253, 0.5);
+    outline-offset: 2px;
+}
+
+/* Ensure proper spacing for nested dropdowns */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* Delete Button and Modal Styles */
+.delete-member-btn {
+    background-color: transparent;
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.delete-member-btn:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.delete-member-btn i {
+    pointer-events: none;
+}
+
+/* Delete Modal Specific Styles */
+#deleteMemberModal {
+    backdrop-filter: blur(5px);
+}
+
+#deleteMemberModal .modal-content {
+    transform: none;
+    opacity: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+#deleteMemberModal .modal-header {
+    border-bottom: none;
+}
+
+#deleteMemberModal .modal-footer {
+    border-top: none;
+    padding-top: 0;
+}
+
+#deleteMemberModal .btn-close {
+    color: white;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+#deleteMemberModal .btn-close:hover {
+    opacity: 0.75;
+}
+
+#confirmDeleteBtn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.2s ease;
+}
+
+#confirmDeleteBtn:hover {
+    background-color: #bb2d3b;
+    border-color: #bb2d3b;
+}
+
+/* Tab Styles */
+.nav-tabs .nav-link {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: white;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+    transition: background 0.3s;
+}
+
+.nav-tabs .nav-link:hover {
+    background: linear-gradient(45deg, #0056b3, #0096c7);
+}
+
+.nav-tabs .nav-link.active {
+    background: linear-gradient(45deg, #0056b3, #0096c7);
+    color: white;
+    border: none;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] .nav-tabs .nav-link {
+    color: white;
+}
+
+[data-bs-theme="dark"] .nav-tabs .nav-link.active {
+    background: linear-gradient(45deg, #0056b3, #0096c7);
+    color: white;
+}

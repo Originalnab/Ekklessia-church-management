@@ -1,0 +1,465 @@
+Raw POST data: Array
+(
+    [household_id] => 5
+)
+
+Processed values - household_id: 5, leader_id: 0, assistant_ids: Array
+(
+)
+
+Raw POST data: Array
+(
+    [household_id] => 5
+)
+
+Processed values - household_id: 5, leader_id: 0, assistant_ids: Array
+(
+)
+
+Raw POST data: Array
+(
+    [household_id] => 5
+)
+
+Processed values - household_id: 5, leader_id: 0, assistant_ids: Array
+(
+)
+
+Timestamp: 2025-03-25 13:09:03
+Raw POST data: Array
+(
+    [household_id] => 5
+)
+
+Processed values - household_id: 5, leader_id: 0, assistant_ids: Array
+(
+)
+
+Error: Invalid leader_id - not set
+Timestamp: 2025-03-25 13:11:17
+Raw POST data: Array
+(
+    [household_id] => 5
+)
+
+Processed values - household_id: 5, leader_id: 0, assistant_ids: Array
+(
+)
+
+Error: Invalid leader_id - not set
+Timestamp: 2025-03-25 13:15:40
+Raw POST data: Array
+(
+    [household_id] => 5
+)
+
+Processed values - household_id: 5, leader_id: 0, assistant_ids: Array
+(
+)
+
+Error: Invalid leader_id - not set
+Timestamp: 2025-03-25 13:30:18
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 13:33:15
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 14:54:41
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:00:26
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:09:47
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:14:25
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:19:26
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:19:55
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:52:31
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 15:53:05
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 16:00:33
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 16:14:18
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 16:35:58
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is NOT set or not an array
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 16:37:11
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is NOT set or not an array
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 16:49:11
+Raw POST data: Array
+(
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is NOT set or not an array
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 16:54:51
+Raw POST data: Array
+(
+    [household_id] => 9
+    [leader_id] => 30
+)
+
+assistant_ids is NOT set or not an array
+Processed values - household_id: 9, leader_id: 30, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 17:05:47
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 9
+            [1] => 31
+        )
+
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 9
+    [1] => 31
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+    [0] => 9
+    [1] => 31
+)
+
+Success: Assignment completed for household 5
+Timestamp: 2025-03-25 18:09:21
+Raw POST data: Array
+(
+    [household_id] => 4
+    [leader_id] => 20
+)
+
+assistant_ids is NOT set or not an array
+Processed values - household_id: 4, leader_id: 20, assistant_ids: Array
+(
+)
+
+Error: No assistants selected
+Timestamp: 2025-03-25 18:10:21
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 21
+        )
+
+    [household_id] => 4
+    [leader_id] => 20
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 21
+)
+
+Processed values - household_id: 4, leader_id: 20, assistant_ids: Array
+(
+    [0] => 21
+)
+
+Success: Assignment completed for household 4
+Timestamp: 2025-03-25 18:26:14
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 30
+        )
+
+    [household_id] => 9
+    [leader_id] => 16
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 30
+)
+
+Processed values - household_id: 9, leader_id: 16, assistant_ids: Array
+(
+    [0] => 30
+)
+
+Success: Assignment completed for household 9
+Timestamp: 2025-03-25 18:39:31
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 26
+        )
+
+    [household_id] => 8
+    [leader_id] => 3
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 26
+)
+
+Processed values - household_id: 8, leader_id: 3, assistant_ids: Array
+(
+    [0] => 26
+)
+
+Success: Assignment completed for household 8
+Timestamp: 2025-03-25 18:58:24
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 9
+        )
+
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 9
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+    [0] => 9
+)
+
+Success: Assignment completed for household 5
+Timestamp: 2025-03-25 18:58:53
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 9
+            [1] => 31
+            [2] => 34
+        )
+
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 9
+    [1] => 31
+    [2] => 34
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+    [0] => 9
+    [1] => 31
+    [2] => 34
+)
+
+Success: Assignment completed for household 5
+Timestamp: 2025-03-25 18:59:04
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 9
+            [1] => 31
+        )
+
+    [household_id] => 5
+    [leader_id] => 33
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 9
+    [1] => 31
+)
+
+Processed values - household_id: 5, leader_id: 33, assistant_ids: Array
+(
+    [0] => 9
+    [1] => 31
+)
+
+Success: Assignment completed for household 5
+Timestamp: 2025-03-28 18:48:36
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 71
+        )
+
+    [household_id] => 12
+    [leader_id] => 8
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 71
+)
+
+Processed values - household_id: 12, leader_id: 8, assistant_ids: Array
+(
+    [0] => 71
+)
+
+Success: Assignment completed for household 12

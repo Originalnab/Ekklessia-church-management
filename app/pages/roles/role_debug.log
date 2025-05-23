@@ -1,0 +1,3731 @@
+Role Management Debug Log
+========================================
+Started: 2025-05-01
+----------------------------------------
+
+This file logs all role management operations including:
+- Add/Edit/Delete roles
+- Permission changes
+- Form submission data
+- Database operation results
+- Errors and warnings
+
+Format:
+[TIMESTAMP] ACTION_TYPE: Description
+DATA: {relevant data}
+ERROR: {error message if any}
+----------------------------------------[2025-05-01 15:21:44] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "hierarchy_level": "National",
+        "description": "Executive Council member role",
+        "permissions": [
+            "manage_permissions",
+            "assign_roles",
+            "view_roles",
+            "add_roles",
+            "edit_members",
+            "delete_members",
+            "add_members",
+            "assign_household",
+            "view_assembly",
+            "edit_assembly",
+            "add_assembly",
+            "view_zone",
+            "edit_zone",
+            "add_zone"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:21:44] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "hierarchy_level": "National",
+    "description": "Executive Council member role",
+    "permissions_count": 14
+}
+----------------------------------------
+[2025-05-01 15:21:44] UPDATE: Updated existing role
+DATA: {
+    "role_id": 1
+}
+----------------------------------------
+[2025-05-01 15:21:44] ERROR: Error in role operation
+ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'permission_name' in 'field list'
+----------------------------------------
+[2025-05-01 15:22:06] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "hierarchy_level": "National",
+        "description": "Executive Council member role",
+        "permissions": [
+            "manage_permissions",
+            "assign_roles",
+            "view_roles",
+            "add_roles",
+            "edit_members",
+            "delete_members",
+            "add_members",
+            "assign_household",
+            "view_assembly",
+            "edit_assembly",
+            "add_assembly",
+            "view_zone",
+            "edit_zone",
+            "add_zone",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:22:06] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "hierarchy_level": "National",
+    "description": "Executive Council member role",
+    "permissions_count": 15
+}
+----------------------------------------
+[2025-05-01 15:22:06] UPDATE: Updated existing role
+DATA: {
+    "role_id": 1
+}
+----------------------------------------
+[2025-05-01 15:22:06] ERROR: Error in role operation
+ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'permission_name' in 'field list'
+----------------------------------------
+[2025-05-01 15:22:09] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "hierarchy_level": "National",
+        "description": "Executive Council member role",
+        "permissions": [
+            "manage_permissions",
+            "assign_roles",
+            "view_roles",
+            "add_roles",
+            "edit_members",
+            "delete_members",
+            "add_members",
+            "assign_household",
+            "view_assembly",
+            "edit_assembly",
+            "add_assembly",
+            "view_zone",
+            "edit_zone",
+            "add_zone",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:22:09] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "hierarchy_level": "National",
+    "description": "Executive Council member role",
+    "permissions_count": 15
+}
+----------------------------------------
+[2025-05-01 15:22:09] UPDATE: Updated existing role
+DATA: {
+    "role_id": 1
+}
+----------------------------------------
+[2025-05-01 15:22:09] ERROR: Error in role operation
+ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'permission_name' in 'field list'
+----------------------------------------
+[2025-05-01 15:27:45] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "hierarchy_level": "National",
+        "description": "Executive Council",
+        "permissions": [
+            "view_members",
+            "edit_members",
+            "add_members",
+            "assign_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:27:45] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "hierarchy_level": "National",
+    "description": "Executive Council",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-01 15:27:45] UPDATE: Updated existing role
+DATA: {
+    "role_id": 1
+}
+----------------------------------------
+[2025-05-01 15:27:45] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_members",
+        "edit_members",
+        "add_members",
+        "assign_household"
+    ],
+    "found_ids": 1
+}
+----------------------------------------
+[2025-05-01 15:27:45] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 1,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-01 15:27:45] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 1,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-01 15:28:06] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "hierarchy_level": "National",
+        "description": "Executive Council member role ",
+        "permissions": [
+            "view_members",
+            "edit_members",
+            "add_members",
+            "assign_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:28:06] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "hierarchy_level": "National",
+    "description": "Executive Council member role",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-01 15:28:06] UPDATE: Updated existing role
+DATA: {
+    "role_id": 1
+}
+----------------------------------------
+[2025-05-01 15:28:06] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_members",
+        "edit_members",
+        "add_members",
+        "assign_household"
+    ],
+    "found_ids": 1
+}
+----------------------------------------
+[2025-05-01 15:28:06] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 1,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-01 15:28:06] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 1,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-01 15:43:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "hierarchy_level": "National",
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "assign_household",
+            "edit_assembly",
+            "add_assembly"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:43:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "assign_household",
+        "edit_assembly",
+        "add_assembly"
+    ],
+    "mapped": [
+        "manage_household_members",
+        "edit_assembly",
+        "add_assembly"
+    ]
+}
+----------------------------------------
+[2025-05-01 15:43:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "hierarchy_level": "National",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-01 15:43:23] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-01 15:43:23] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_household_members",
+        "edit_assembly",
+        "add_assembly"
+    ],
+    "found_ids": 3
+}
+----------------------------------------
+[2025-05-01 15:43:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-01 15:43:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-01 15:43:52] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "hierarchy_level": "National",
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "assign_household",
+            "edit_assembly",
+            "add_assembly",
+            "add_zone",
+            "view_household",
+            "edit_household",
+            "generate_reports"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 15:43:52] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "assign_household",
+        "edit_assembly",
+        "add_assembly",
+        "add_zone",
+        "view_household",
+        "edit_household",
+        "generate_reports"
+    ],
+    "mapped": [
+        "manage_household_members",
+        "edit_assembly",
+        "add_assembly",
+        "add_zone",
+        "view_household",
+        "edit_household",
+        "generate_reports"
+    ]
+}
+----------------------------------------
+[2025-05-01 15:43:52] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "hierarchy_level": "National",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 7
+}
+----------------------------------------
+[2025-05-01 15:43:52] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-01 15:43:52] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_household_members",
+        "edit_assembly",
+        "add_assembly",
+        "add_zone",
+        "view_household",
+        "edit_household",
+        "generate_reports"
+    ],
+    "found_ids": 5
+}
+----------------------------------------
+[2025-05-01 15:43:52] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 5
+}
+----------------------------------------
+[2025-05-01 15:43:52] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-01 23:26:17] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Presiding Elder ",
+        "hierarchy_level": "Assembly",
+        "description": "Presiding ",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-01 23:26:17] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-01 23:26:17] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Presiding Elder",
+    "hierarchy_level": "Assembly",
+    "description": "Presiding",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-01 23:26:17] ERROR: Error in role operation
+ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`roles`, CONSTRAINT `fk_roles_scopes` FOREIGN KEY (`scope_id`) REFERENCES `scopes` (`scope_id`) ON DELETE CASCADE ON UPDATE CASCADE)
+----------------------------------------
+[2025-05-02 00:18:34] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Presiding Elder ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder ",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 00:18:34] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 00:18:34] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-02 00:18:34] CREATE: Created new role
+DATA: {
+    "role_id": "6"
+}
+----------------------------------------
+[2025-05-02 00:18:34] SCOPES: Added scopes to role
+DATA: {
+    "role_id": "6",
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 00:18:34] ERROR: Error in role operation
+ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'
+----------------------------------------
+[2025-05-02 00:18:44] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Presiding Elder ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder ",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 00:18:44] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 00:18:44] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-02 00:18:44] CREATE: Created new role
+DATA: {
+    "role_id": "7"
+}
+----------------------------------------
+[2025-05-02 00:18:44] SCOPES: Added scopes to role
+DATA: {
+    "role_id": "7",
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 00:18:44] ERROR: Error in role operation
+ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'
+----------------------------------------
+[2025-05-02 00:31:30] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Presiding Elder ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder ",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "view_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 00:31:30] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zones",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 00:31:30] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-02 00:31:30] CREATE: Created new role
+DATA: {
+    "role_id": "8"
+}
+----------------------------------------
+[2025-05-02 00:31:30] SCOPES: Added scopes to role
+DATA: {
+    "role_id": "8",
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 00:31:30] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zones",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ],
+    "found_ids": 3
+}
+----------------------------------------
+[2025-05-02 00:31:30] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": "8",
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-02 00:31:30] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": "8",
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 00:31:45] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Presiding Elder ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder ",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "view_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 00:31:45] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zones",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 00:31:45] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-02 00:31:45] ERROR: Error in role operation
+ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Presiding Elder' for key 'role_name'
+----------------------------------------
+[2025-05-02 00:31:50] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Presiding Elder ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder ",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "view_zone",
+            "manage_household",
+            "manage_specialized_ministries",
+            "view_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 00:31:50] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zone",
+        "manage_household",
+        "manage_specialized_ministries",
+        "view_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "view_zones",
+        "manage_household_members",
+        "manage_specialized_ministries",
+        "view_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 00:31:50] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 7
+}
+----------------------------------------
+[2025-05-02 00:31:50] ERROR: Error in role operation
+ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Presiding Elder' for key 'role_name'
+----------------------------------------
+[2025-05-02 00:55:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Saint",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Saint role",
+        "permissions": [
+            "view_assembly",
+            "view_zone",
+            "view_household",
+            "view_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 00:55:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_assembly",
+        "view_zone",
+        "view_household",
+        "view_specialized_ministries"
+    ],
+    "mapped": [
+        "view_assemblies",
+        "view_zones",
+        "view_household",
+        "view_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 00:55:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Saint",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Saint role",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-02 00:55:23] CREATE: Created new role
+DATA: {
+    "role_id": "11"
+}
+----------------------------------------
+[2025-05-02 00:55:23] SCOPES: Added scopes to role
+DATA: {
+    "role_id": "11",
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 00:55:23] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_assemblies",
+        "view_zones",
+        "view_household",
+        "view_specialized_ministries"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 00:55:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": "11",
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 00:55:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": "11",
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 01:16:56] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "8",
+        "role_name": "Presiding Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "view_assembly",
+            "edit_assembly",
+            "manage_reports",
+            "view_reports",
+            "generate_reports",
+            "export_reports",
+            "manage_specialized_ministries",
+            "view_specialized_ministries",
+            "edit_specialized_ministries",
+            "delete_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 01:16:56] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "view_assembly",
+        "edit_assembly",
+        "manage_reports",
+        "view_reports",
+        "generate_reports",
+        "export_reports",
+        "manage_specialized_ministries",
+        "view_specialized_ministries",
+        "edit_specialized_ministries",
+        "delete_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "view_assemblies",
+        "edit_assembly",
+        "manage_reports",
+        "view_reports",
+        "generate_financial_reports",
+        "export_reports",
+        "manage_specialized_ministries",
+        "view_specialized_ministries",
+        "edit_specialized_ministries",
+        "delete_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 01:16:56] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 8,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 12
+}
+----------------------------------------
+[2025-05-02 01:16:56] UPDATE: Updated existing role
+DATA: {
+    "role_id": 8
+}
+----------------------------------------
+[2025-05-02 01:16:56] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 8,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 01:16:56] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members",
+        "view_assemblies",
+        "edit_assembly",
+        "manage_reports",
+        "view_reports",
+        "generate_financial_reports",
+        "export_reports",
+        "manage_specialized_ministries",
+        "view_specialized_ministries",
+        "edit_specialized_ministries",
+        "delete_specialized_ministries"
+    ],
+    "found_ids": 3
+}
+----------------------------------------
+[2025-05-02 01:16:56] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 8,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-02 01:16:56] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 8,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 01:22:15] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_assembly",
+            "view_zone",
+            "view_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 01:22:15] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_assembly",
+        "view_zone",
+        "view_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "view_assemblies",
+        "view_zones",
+        "view_household",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-02 01:22:15] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-02 01:22:15] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 01:22:15] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 01:22:15] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_assemblies",
+        "view_zones",
+        "view_household",
+        "edit_household"
+    ],
+    "found_ids": 3
+}
+----------------------------------------
+[2025-05-02 01:22:15] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-02 01:22:15] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 01:22:47] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "manage_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 01:22:47] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "manage_household_members",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-02 01:22:47] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-02 01:22:47] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 01:22:47] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 01:22:47] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_household_members",
+        "edit_household"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 01:22:47] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 01:22:47] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 01:23:16] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 01:23:16] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "view_household",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-02 01:23:16] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-02 01:23:16] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 01:23:16] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 01:23:16] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_household",
+        "edit_household"
+    ],
+    "found_ids": 1
+}
+----------------------------------------
+[2025-05-02 01:23:16] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-02 01:23:16] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 01:31:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "view_assembly",
+            "view_zone",
+            "edit_household",
+            "view_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 01:31:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "view_assembly",
+        "view_zone",
+        "edit_household",
+        "view_specialized_ministries"
+    ],
+    "mapped": [
+        "view_members",
+        "view_assemblies",
+        "view_zones",
+        "edit_household",
+        "view_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 01:31:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-02 01:31:01] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 01:31:01] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 01:31:01] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_members",
+        "view_assemblies",
+        "view_zones",
+        "edit_household",
+        "view_specialized_ministries"
+    ],
+    "found_ids": 4
+}
+----------------------------------------
+[2025-05-02 01:31:01] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 4
+}
+----------------------------------------
+[2025-05-02 01:31:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 01:31:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "view_assembly",
+            "view_zone",
+            "edit_household",
+            "view_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 01:31:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "view_assembly",
+        "view_zone",
+        "edit_household",
+        "view_specialized_ministries"
+    ],
+    "mapped": [
+        "view_members",
+        "view_assemblies",
+        "view_zones",
+        "edit_household",
+        "view_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 01:31:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-02 01:31:01] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 01:31:01] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 01:31:01] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "view_members",
+        "view_assemblies",
+        "view_zones",
+        "edit_household",
+        "view_specialized_ministries"
+    ],
+    "found_ids": 4
+}
+----------------------------------------
+[2025-05-02 01:31:01] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 4
+}
+----------------------------------------
+[2025-05-02 01:31:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 19:39:37] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Assistant Presiding ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_reports",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 19:39:37] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_reports",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_reports",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-02 19:39:37] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Assistant Presiding",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 7
+}
+----------------------------------------
+[2025-05-02 19:39:37] CREATE: Created new role
+DATA: {
+    "role_id": "12"
+}
+----------------------------------------
+[2025-05-02 19:39:37] SCOPES: Added scopes to role
+DATA: {
+    "role_id": "12",
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 19:39:37] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_reports",
+        "manage_specialized_ministries"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 19:39:37] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": "12",
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 19:39:37] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": "12",
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 19:40:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "12",
+        "role_name": "Assistant Presiding",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_assembly",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 19:40:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_assembly",
+        "manage_household"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_assembly",
+        "manage_household_members"
+    ]
+}
+----------------------------------------
+[2025-05-02 19:40:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 12,
+    "role_name": "Assistant Presiding",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-02 19:40:23] UPDATE: Updated existing role
+DATA: {
+    "role_id": 12
+}
+----------------------------------------
+[2025-05-02 19:40:23] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 12,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 19:40:23] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_assembly",
+        "manage_household_members"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 19:40:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 12,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 19:40:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 12,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 19:40:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "12",
+        "role_name": "Assistant Presiding",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_assembly",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 19:40:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_assembly",
+        "manage_household"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_assembly",
+        "manage_household_members"
+    ]
+}
+----------------------------------------
+[2025-05-02 19:40:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 12,
+    "role_name": "Assistant Presiding",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-02 19:40:23] UPDATE: Updated existing role
+DATA: {
+    "role_id": 12
+}
+----------------------------------------
+[2025-05-02 19:40:23] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 12,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-02 19:40:23] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_assembly",
+        "manage_household_members"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 19:40:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 12,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 19:40:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 12,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 19:46:56] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "manage_members",
+            "view_members",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 19:46:56] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_members",
+        "edit_household"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_members",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-02 19:46:56] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-02 19:46:57] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 19:46:57] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 19:46:57] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_members",
+        "view_members",
+        "edit_household"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 19:46:57] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 19:46:57] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-02 19:46:57] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "manage_members",
+            "view_members",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-02 19:46:57] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_members",
+        "edit_household"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_members",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-02 19:46:57] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-02 19:46:57] UPDATE: Updated existing role
+DATA: {
+    "role_id": 4
+}
+----------------------------------------
+[2025-05-02 19:46:57] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 4,
+    "scope_count": 1
+}
+----------------------------------------
+[2025-05-02 19:46:57] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_members",
+        "view_members",
+        "edit_household"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-02 19:46:57] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-02 19:46:57] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 18:36:12] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Elder ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_reports",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 18:36:12] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_reports",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_reports",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 18:36:12] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 7
+}
+----------------------------------------
+[2025-05-04 18:36:12] CREATE: Created new role
+DATA: {
+    "role_id": "13"
+}
+----------------------------------------
+[2025-05-04 18:36:12] SCOPES: Added scopes to role
+DATA: {
+    "role_id": "13",
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-04 18:36:12] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_reports",
+        "manage_specialized_ministries"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-04 18:36:12] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": "13",
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 18:36:12] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": "13",
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 18:37:04] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 18:37:04] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 18:37:04] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-04 18:37:04] UPDATE: Updated existing role
+DATA: {
+    "role_id": 13
+}
+----------------------------------------
+[2025-05-04 18:37:04] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 13,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:04] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-04 18:37:04] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:04] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 18:37:04] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 18:37:04] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 18:37:04] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-04 18:37:04] UPDATE: Updated existing role
+DATA: {
+    "role_id": 13
+}
+----------------------------------------
+[2025-05-04 18:37:04] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 13,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:04] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ],
+    "found_ids": 2
+}
+----------------------------------------
+[2025-05-04 18:37:04] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:04] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 18:37:38] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 18:37:38] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members"
+    ]
+}
+----------------------------------------
+[2025-05-04 18:37:38] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:38] UPDATE: Updated existing role
+DATA: {
+    "role_id": 13
+}
+----------------------------------------
+[2025-05-04 18:37:38] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 13,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:38] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members"
+    ],
+    "found_ids": 1
+}
+----------------------------------------
+[2025-05-04 18:37:38] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-04 18:37:38] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 18:37:38] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 18:37:38] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members"
+    ]
+}
+----------------------------------------
+[2025-05-04 18:37:38] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:38] UPDATE: Updated existing role
+DATA: {
+    "role_id": 13
+}
+----------------------------------------
+[2025-05-04 18:37:38] SCOPES: Added scopes to role
+DATA: {
+    "role_id": 13,
+    "scope_count": 2
+}
+----------------------------------------
+[2025-05-04 18:37:38] PERMISSIONS_FETCH: Retrieved permission IDs
+DATA: {
+    "permissions": [
+        "manage_roles",
+        "manage_members"
+    ],
+    "found_ids": 1
+}
+----------------------------------------
+[2025-05-04 18:37:38] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-04 18:37:38] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:12:50] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "8",
+        "role_name": "Presiding Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder",
+        "permissions": [
+            "manage_roles",
+            "edit_assembly"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:12:50] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "edit_assembly"
+    ],
+    "mapped": [
+        "manage_roles",
+        "edit_assembly"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:12:50] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 8,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-04 19:12:50] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 8,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:12:50] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 8,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:12:50] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "8",
+        "role_name": "Presiding Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "Presiding Elder",
+        "permissions": [
+            "manage_roles",
+            "edit_assembly"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:12:50] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "edit_assembly"
+    ],
+    "mapped": [
+        "manage_roles",
+        "edit_assembly"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:12:50] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 8,
+    "role_name": "Presiding Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Presiding Elder",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-04 19:12:50] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 8,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:12:50] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 8,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:13:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:13:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:13:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-04 19:13:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:13:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:13:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:13:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:13:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-04 19:13:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:13:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:14:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:14:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:14:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:14:01] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:14:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:14:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:14:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:14:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:14:01] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:14:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:14:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_zone"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:14:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_zone"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_zone"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:14:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-04 19:14:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-04 19:14:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:14:23] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_zone"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:14:23] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_zone"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_zone"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:14:23] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 2
+}
+----------------------------------------
+[2025-05-04 19:14:23] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 1
+}
+----------------------------------------
+[2025-05-04 19:14:23] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:14:56] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:14:56] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:14:56] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:14:56] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:14:56] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:14:56] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "13",
+        "role_name": "Elder",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_roles",
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:14:56] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household"
+    ],
+    "mapped": [
+        "manage_roles",
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:14:56] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 13,
+    "role_name": "Elder",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:14:56] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 13,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:14:56] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 13,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:15:22] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "manage_members",
+            "view_members",
+            "view_assembly",
+            "manage_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:15:22] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_members",
+        "view_assembly",
+        "manage_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_members",
+        "view_assemblies",
+        "manage_household_members",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:15:22] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:15:22] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 4
+}
+----------------------------------------
+[2025-05-04 19:15:22] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:15:22] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "manage_members",
+            "view_members",
+            "view_assembly",
+            "manage_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:15:22] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_members",
+        "view_assembly",
+        "manage_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_members",
+        "view_assemblies",
+        "manage_household_members",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:15:22] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:15:22] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 4
+}
+----------------------------------------
+[2025-05-04 19:15:22] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:15:51] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "edit_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:15:51] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "edit_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "view_members",
+        "edit_household",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:15:51] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-04 19:15:51] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:15:51] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:15:51] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "edit_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:15:51] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "edit_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "view_members",
+        "edit_household",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:15:51] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 3
+}
+----------------------------------------
+[2025-05-04 19:15:51] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:15:51] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:16:18] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "view_assembly",
+            "view_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:16:18] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "view_assembly",
+        "view_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "view_members",
+        "view_assemblies",
+        "view_household",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:16:18] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-04 19:16:18] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-04 19:16:18] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:16:18] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "view_assembly",
+            "view_household",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:16:18] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "view_assembly",
+        "view_household",
+        "edit_household"
+    ],
+    "mapped": [
+        "view_members",
+        "view_assemblies",
+        "view_household",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:16:18] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-04 19:16:18] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-04 19:16:18] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:17:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "assign_household",
+            "manage_assembly",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:17:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "assign_household",
+        "manage_assembly",
+        "edit_household"
+    ],
+    "mapped": [
+        "view_members",
+        "manage_household_members",
+        "manage_assembly",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:17:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-04 19:17:01] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-04 19:17:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:17:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "4",
+        "role_name": "Shepherd",
+        "scope_ids": [
+            "1"
+        ],
+        "description": "Shepherd role with member management permissions yh",
+        "permissions": [
+            "view_members",
+            "assign_household",
+            "manage_assembly",
+            "edit_household"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:17:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "view_members",
+        "assign_household",
+        "manage_assembly",
+        "edit_household"
+    ],
+    "mapped": [
+        "view_members",
+        "manage_household_members",
+        "manage_assembly",
+        "edit_household"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:17:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 4,
+    "role_name": "Shepherd",
+    "scope_ids": [
+        "1"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "Shepherd role with member management permissions yh",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-04 19:17:01] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": 4,
+    "permission_count": 3
+}
+----------------------------------------
+[2025-05-04 19:17:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 4,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:19:46] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Children's Ministry Shepherd ",
+        "scope_ids": [
+            "1",
+            "2"
+        ],
+        "description": "",
+        "permissions": [
+            "manage_members",
+            "view_assembly",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:19:46] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_assembly",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_assemblies",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:19:46] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Children's Ministry Shepherd",
+    "scope_ids": [
+        "1",
+        "2"
+    ],
+    "highest_scope_id": 1,
+    "hierarchy_level": "Household",
+    "description": "",
+    "permissions_count": 4
+}
+----------------------------------------
+[2025-05-04 19:19:46] PERMISSIONS: Added permissions to role
+DATA: {
+    "role_id": "14",
+    "permission_count": 2
+}
+----------------------------------------
+[2025-05-04 19:19:46] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": "14",
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:37:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "scope_ids": [
+            "4"
+        ],
+        "description": "Executive Council member role",
+        "permissions": [
+            "manage_members",
+            "view_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:37:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:37:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "scope_ids": [
+        "4"
+    ],
+    "highest_scope_id": 4,
+    "hierarchy_level": "National",
+    "description": "Executive Council member role",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-04 19:37:01] PERMISSIONS: Updated permissions for role
+DATA: {
+    "role_id": 1,
+    "added": 1,
+    "removed": 0
+}
+----------------------------------------
+[2025-05-04 19:37:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 1,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:37:01] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "1",
+        "role_name": "EXCO",
+        "scope_ids": [
+            "4"
+        ],
+        "description": "Executive Council member role",
+        "permissions": [
+            "manage_members",
+            "view_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:37:01] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "view_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_members",
+        "view_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:37:01] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 1,
+    "role_name": "EXCO",
+    "scope_ids": [
+        "4"
+    ],
+    "highest_scope_id": 4,
+    "hierarchy_level": "National",
+    "description": "Executive Council member role",
+    "permissions_count": 6
+}
+----------------------------------------
+[2025-05-04 19:37:01] PERMISSIONS: Updated permissions for role
+DATA: {
+    "role_id": 1,
+    "added": 0,
+    "removed": 0
+}
+----------------------------------------
+[2025-05-04 19:37:01] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 1,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:39:55] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_name": "Vice President ",
+        "scope_ids": [
+            "4"
+        ],
+        "description": "The Office of the Vice President ",
+        "permissions": [
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:39:55] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:39:55] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": null,
+    "role_name": "Vice President",
+    "scope_ids": [
+        "4"
+    ],
+    "highest_scope_id": 4,
+    "hierarchy_level": "National",
+    "description": "The Office of the Vice President",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:39:55] PERMISSIONS: Updated permissions for role
+DATA: {
+    "role_id": "15",
+    "added": 1,
+    "removed": 0
+}
+----------------------------------------
+[2025-05-04 19:39:55] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": "15",
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:40:48] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "15",
+        "role_name": "Vice President",
+        "scope_ids": [
+            "4"
+        ],
+        "description": "The Office of the Vice President",
+        "permissions": [
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:40:48] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:40:48] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 15,
+    "role_name": "Vice President",
+    "scope_ids": [
+        "4"
+    ],
+    "highest_scope_id": 4,
+    "hierarchy_level": "National",
+    "description": "The Office of the Vice President",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:40:48] PERMISSIONS: Updated permissions for role
+DATA: {
+    "role_id": 15,
+    "added": 0,
+    "removed": 0
+}
+----------------------------------------
+[2025-05-04 19:40:48] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 15,
+    "operation": "update"
+}
+----------------------------------------
+[2025-05-04 19:40:48] FORM_SUBMISSION: Role form submitted
+DATA: {
+    "POST_DATA": {
+        "role_id": "15",
+        "role_name": "Vice President",
+        "scope_ids": [
+            "4"
+        ],
+        "description": "The Office of the Vice President",
+        "permissions": [
+            "manage_members",
+            "manage_assembly",
+            "manage_zone",
+            "manage_household",
+            "manage_specialized_ministries"
+        ]
+    },
+    "USER_ID": "30"
+}
+----------------------------------------
+[2025-05-04 19:40:48] PERMISSION_MAPPING: Mapped permission names
+DATA: {
+    "original": [
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household",
+        "manage_specialized_ministries"
+    ],
+    "mapped": [
+        "manage_members",
+        "manage_assembly",
+        "manage_zone",
+        "manage_household_members",
+        "manage_specialized_ministries"
+    ]
+}
+----------------------------------------
+[2025-05-04 19:40:48] DATA_PROCESSING: Processed form data
+DATA: {
+    "role_id": 15,
+    "role_name": "Vice President",
+    "scope_ids": [
+        "4"
+    ],
+    "highest_scope_id": 4,
+    "hierarchy_level": "National",
+    "description": "The Office of the Vice President",
+    "permissions_count": 5
+}
+----------------------------------------
+[2025-05-04 19:40:48] PERMISSIONS: Updated permissions for role
+DATA: {
+    "role_id": 15,
+    "added": 0,
+    "removed": 0
+}
+----------------------------------------
+[2025-05-04 19:40:48] SUCCESS: Role operation completed successfully
+DATA: {
+    "role_id": 15,
+    "operation": "update"
+}
+----------------------------------------

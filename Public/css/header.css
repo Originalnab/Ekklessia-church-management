@@ -1,0 +1,130 @@
+/* Base styles */
+:root {
+    --sidebar-bg-light: #f8f9fa;
+    --sidebar-bg-dark: #1a1a1a;
+    --sidebar-text-light: #212529;
+    --sidebar-text-dark: #ffffff;
+    --sidebar-hover-light: rgba(0, 0, 0, 0.1);
+    --sidebar-hover-dark: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar toggle button */
+#sidebarCollapse {
+    color: white;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+#sidebarCollapse:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] #sidebarCollapse {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+[data-bs-theme="dark"] #sidebarCollapse:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar styles with dark mode support */
+#mySidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1070;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg-light);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] #mySidebar {
+    background-color: var(--sidebar-bg-dark);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-content {
+    transition: margin-left 0.3s;
+    padding: 1rem;
+}
+
+/* Profile dropdown styles */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.user-profile.dropdown-toggle::after {
+    display: none;
+}
+
+.user-profile:hover,
+.user-profile:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.show .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Rest of existing styles... */
+.top-header .dropdown-menu {
+    position: absolute;
+    z-index: 1060;
+}
+
+.dropdown-menu {
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+    z-index: 1060;
+    margin-top: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+    color: var(--text-color-dark);
+}
+
+.dropdown-item:hover {
+    background-color: var(--sidebar-hover-light);
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+    background-color: var(--sidebar-hover-dark);
+}
+
+/* Navigation card styles */
+.nav-card {
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .nav-card {
+    border-color: var(--border-color-dark) !important;
+    background-color: var(--card-bg-dark);
+}

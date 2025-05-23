@@ -1,0 +1,386 @@
+Raw POST data: Array
+(
+    [title] => Sunday Service Meeting 
+    [event_type_id] => 2
+    [description] => Sunday service 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => 
+    [start_date] => 
+    [end_date] => 
+    [start_time] => 08:30
+    [duration] => 240
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Service Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Raw POST data: Array
+(
+    [title] => Sunday Service Meeting 
+    [event_type_id] => 2
+    [description] => Sunday service 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => 
+    [start_date] => 
+    [end_date] => 
+    [start_time] => 08:30
+    [duration] => 240
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Service Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Raw POST data: Array
+(
+    [title] => Sunday Service Meeting 
+    [event_type_id] => 2
+    [description] => Sunday service 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => 
+    [start_date] => 
+    [end_date] => 
+    [start_time] => 08:30
+    [duration] => 240
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Service Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Raw POST data: Array
+(
+    [title] => Sunday Service Meeting 
+    [event_type_id] => 2
+    [description] => Sunday service 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => 
+    [start_date] => 
+    [end_date] => 
+    [start_time] => 08:30
+    [duration] => 240
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Service Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Raw POST data: Array
+(
+    [title] => Sunday Lords Day Meeting 
+    [event_type_id] => 2
+    [description] => Sunday Lords day temple gathering 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => various assemblies 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Lords Day Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Created By: 1
+Raw POST data: Array
+(
+    [title] => Sunday Lords Day Meeting 
+    [event_type_id] => 2
+    [description] => Sunday Lords day temple gathering 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => various assemblies 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Lords Day Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Created By: 1
+Raw POST data: Array
+(
+    [title] => Sunday Lords Day Meeting 
+    [event_type_id] => 2
+    [description] => Sunday Lords day temple gathering 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => various assemblies 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Lords Day Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Created By: 1
+Raw POST data: Array
+(
+    [title] => Sunday Lords Day Meeting 
+    [event_type_id] => 2
+    [description] => Sunday Lords day temple gathering 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => various assemblies 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 1
+)
+
+Title: Sunday Lords Day Meeting 
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Created By: 1
+Raw POST data: Array
+(
+    [title] => Sunday Service  
+    [event_type_id] => 2
+    [description] => Sunday Meeting 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => various assemblies 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 62
+)
+
+Title: Sunday Service  
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Created By: 62
+Raw POST data: Array
+(
+    [title] => Sunday Service  
+    [event_type_id] => 2
+    [description] => Sunday Meeting 
+    [levels] => Array
+        (
+            [0] => assembly
+        )
+
+    [assembly_ids] => Array
+        (
+            [0] => 3
+            [1] => 2
+            [2] => 7
+            [3] => 6
+            [4] => 8
+            [5] => 5
+            [6] => 4
+        )
+
+    [location] => various assemblies 
+    [start_time] => 08:30
+    [duration] => 240
+    [start_date] => 
+    [end_date] => 
+    [frequency] => weekly
+    [recurrence_day] => Sunday
+    [created_by] => 62
+)
+
+Title: Sunday Service  
+Event Type ID: 2
+Levels: Array
+(
+    [0] => assembly
+)
+
+Created By: 62

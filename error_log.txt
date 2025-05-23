@@ -1,0 +1,449 @@
+[17-Mar-2025 12:17:18 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[17-Mar-2025 12:17:18 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[17-Mar-2025 12:17:18 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[17-Mar-2025 12:17:18 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[17-Mar-2025 14:37:20 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[17-Mar-2025 14:37:20 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[17-Mar-2025 14:37:20 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[17-Mar-2025 14:37:20 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[17-Mar-2025 14:37:44 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[17-Mar-2025 14:37:44 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[17-Mar-2025 14:37:44 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[17-Mar-2025 14:37:44 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[19-Mar-2025 09:13:44 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[19-Mar-2025 09:13:44 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[19-Mar-2025 09:13:44 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[19-Mar-2025 09:13:44 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[19-Mar-2025 09:14:14 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[19-Mar-2025 09:14:14 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 49
+[19-Mar-2025 09:14:14 Africa/Accra] PHP Notice:  Undefined index: profile_photo in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[19-Mar-2025 09:14:14 Africa/Accra] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\Ekklessia-church-management\app\pages\tpd\members\edit_member_process.php on line 51
+[19-Mar-2025 20:42:38 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:40 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:42 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:45 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:45 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:46 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:46 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:47 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:47 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:47 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:47 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:48 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:48 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:48 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:48 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:49 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:49 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:49 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:49 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:50 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[19-Mar-2025 20:42:50 Africa/Accra] Database error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ekklessia_db`.`members`, CONSTRAINT `fk_referral` FOREIGN KEY (`referral_id`) REFERENCES `members` (`member_id`) ON DELETE SET NULL)
+[28-Apr-2025 14:07:39 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 14:07:39 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 14:07:39 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:07:39 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:07:39 Africa/Accra] User found in members table: member_id: 30, username: gifty2025
+[28-Apr-2025 14:07:39 Africa/Accra] Stored password hash: $2y$10$y3FRjeCYjbkXkQE0082LO.LG9PDk9zBQZtZxStyWLgu99uAdsIJZa
+[28-Apr-2025 14:07:39 Africa/Accra] Attempting to verify password...
+[28-Apr-2025 14:07:39 Africa/Accra] Password verified successfully!
+[28-Apr-2025 14:07:39 Africa/Accra] Session token generated for member_id: 30
+[28-Apr-2025 14:07:39 Africa/Accra] Session variables set: Array
+(
+    [member_id] => 30
+    [function_id] => 
+    [function_name] => 
+    [token] => a705174c5b2fc061d987c92f3d1b137274a1eaf84e57a702442223539cff85da
+)
+
+[28-Apr-2025 14:07:39 Africa/Accra] Invalid role: 
+[28-Apr-2025 14:07:41 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => superadmin
+    [password] => admin123
+)
+
+[28-Apr-2025 14:07:41 Africa/Accra] Attempting login for username: superadmin
+[28-Apr-2025 14:07:41 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:07:41 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:07:41 Africa/Accra] No user found in members table for username: superadmin
+[28-Apr-2025 14:07:41 Africa/Accra] Login failed: Invalid username or password for username: superadmin
+[28-Apr-2025 14:07:48 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => arita
+    [password] => arita2025
+)
+
+[28-Apr-2025 14:07:48 Africa/Accra] Attempting login for username: arita
+[28-Apr-2025 14:07:48 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:07:48 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:07:48 Africa/Accra] User found in members table: member_id: 8, username: arita
+[28-Apr-2025 14:07:48 Africa/Accra] Stored password hash: $2y$10$sS805qOvBOPiXHS6Cp/gAOV5G9/psbNM9e05Yi05dny/.Nv..9ox6
+[28-Apr-2025 14:07:48 Africa/Accra] Attempting to verify password...
+[28-Apr-2025 14:07:48 Africa/Accra] Password verified successfully!
+[28-Apr-2025 14:07:48 Africa/Accra] Session token generated for member_id: 8
+[28-Apr-2025 14:07:48 Africa/Accra] Session variables set: Array
+(
+    [member_id] => 8
+    [function_id] => 
+    [function_name] => 
+    [token] => 20fbb3092135c4e98803852938aa4562b47d4ff60211ecb4c39488e874a07cf2
+)
+
+[28-Apr-2025 14:07:48 Africa/Accra] Invalid role: 
+[28-Apr-2025 14:09:23 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => arita
+    [password] => arita2025
+)
+
+[28-Apr-2025 14:09:23 Africa/Accra] Attempting login for username: arita
+[28-Apr-2025 14:09:23 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:09:23 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:09:23 Africa/Accra] User found in members table: member_id: 8, username: arita
+[28-Apr-2025 14:09:23 Africa/Accra] Stored password hash: $2y$10$sS805qOvBOPiXHS6Cp/gAOV5G9/psbNM9e05Yi05dny/.Nv..9ox6
+[28-Apr-2025 14:09:23 Africa/Accra] Attempting to verify password...
+[28-Apr-2025 14:09:23 Africa/Accra] Password verified successfully!
+[28-Apr-2025 14:09:23 Africa/Accra] Session token generated for member_id: 8
+[28-Apr-2025 14:09:23 Africa/Accra] Session variables set: Array
+(
+    [member_id] => 8
+    [function_id] => 
+    [function_name] => 
+    [token] => 75e3fed87f4853f4299e8c87148e4226e3719da0d1a3f8e7b1f9aa1a12eb8e99
+)
+
+[28-Apr-2025 14:09:23 Africa/Accra] Invalid role: 
+[28-Apr-2025 14:14:28 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => arita
+    [password] => arita2025
+)
+
+[28-Apr-2025 14:14:28 Africa/Accra] Attempting login for username: arita
+[28-Apr-2025 14:14:28 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:14:28 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:14:28 Africa/Accra] User found in members table: member_id: 8, username: arita
+[28-Apr-2025 14:14:28 Africa/Accra] Stored password hash: $2y$10$sS805qOvBOPiXHS6Cp/gAOV5G9/psbNM9e05Yi05dny/.Nv..9ox6
+[28-Apr-2025 14:14:28 Africa/Accra] Attempting to verify password...
+[28-Apr-2025 14:14:28 Africa/Accra] Password verified successfully!
+[28-Apr-2025 14:14:28 Africa/Accra] Session token generated for member_id: 8
+[28-Apr-2025 14:14:28 Africa/Accra] Session variables set: Array
+(
+    [member_id] => 8
+    [function_id] => 
+    [function_name] => 
+    [token] => 7d7d21ac1552af15427b150c080485adb054e499396b07fd60309fa97360a0dc
+)
+
+[28-Apr-2025 14:14:28 Africa/Accra] Invalid role: 
+[28-Apr-2025 14:19:43 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => arita
+    [password] => arita2025
+)
+
+[28-Apr-2025 14:19:43 Africa/Accra] Attempting login for username: arita
+[28-Apr-2025 14:19:43 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:19:43 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:19:43 Africa/Accra] User found in members table: member_id: 8, username: arita
+[28-Apr-2025 14:19:43 Africa/Accra] Stored password hash: $2y$10$sS805qOvBOPiXHS6Cp/gAOV5G9/psbNM9e05Yi05dny/.Nv..9ox6
+[28-Apr-2025 14:19:43 Africa/Accra] Attempting to verify password...
+[28-Apr-2025 14:19:43 Africa/Accra] Password verified successfully!
+[28-Apr-2025 14:19:43 Africa/Accra] Database error in login_process.php: SQLSTATE[HY093]: Invalid parameter number
+[28-Apr-2025 14:19:44 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => superadmin
+    [password] => admin123
+)
+
+[28-Apr-2025 14:19:44 Africa/Accra] Attempting login for username: superadmin
+[28-Apr-2025 14:19:44 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:19:44 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:19:44 Africa/Accra] No user found in members table for username: superadmin
+[28-Apr-2025 14:19:44 Africa/Accra] Login failed: Invalid username or password for username: superadmin
+[28-Apr-2025 14:19:52 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[28-Apr-2025 14:19:52 Africa/Accra] Attempting login for username: zima
+[28-Apr-2025 14:19:52 Africa/Accra] Database connection status: Connected
+[28-Apr-2025 14:19:52 Africa/Accra] Temporary credentials check result: No temp user found
+[28-Apr-2025 14:19:52 Africa/Accra] User found in members table: member_id: 11, username: zima
+[28-Apr-2025 14:19:52 Africa/Accra] Stored password hash: $2y$10$/Z3vY8/ec29Ujtr9rl4QR.RaIshC1vJAH8rLuFKF04B0QqAmXyXLK
+[28-Apr-2025 14:19:52 Africa/Accra] Attempting to verify password...
+[28-Apr-2025 14:19:52 Africa/Accra] Password verified successfully!
+[28-Apr-2025 14:19:52 Africa/Accra] Database error in login_process.php: SQLSTATE[HY093]: Invalid parameter number
+[28-Apr-2025 17:51:31 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 17:51:31 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 17:51:31 Africa/Accra] Password verified successfully for member_id: 30
+[28-Apr-2025 17:51:31 Africa/Accra] Database error in login_process.php: SQLSTATE[HY093]: Invalid parameter number
+[28-Apr-2025 17:51:33 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => superadmin
+    [password] => admin123
+)
+
+[28-Apr-2025 17:51:33 Africa/Accra] Attempting login for username: superadmin
+[28-Apr-2025 17:51:33 Africa/Accra] Login failed: Invalid username or password for username: superadmin
+[28-Apr-2025 17:51:41 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 17:51:41 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 17:51:41 Africa/Accra] Password verified successfully for member_id: 30
+[28-Apr-2025 17:51:41 Africa/Accra] Database error in login_process.php: SQLSTATE[HY093]: Invalid parameter number
+[28-Apr-2025 17:51:49 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 17:51:49 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 17:51:49 Africa/Accra] Password verified successfully for member_id: 30
+[28-Apr-2025 17:51:49 Africa/Accra] Database error in login_process.php: SQLSTATE[HY093]: Invalid parameter number
+[28-Apr-2025 18:00:01 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 18:00:01 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 18:00:01 Africa/Accra] Password verified successfully for member_id: 30
+[28-Apr-2025 18:00:01 Africa/Accra] Session token generated for member_id: 30
+[28-Apr-2025 18:32:26 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[28-Apr-2025 18:32:26 Africa/Accra] Attempting login for username: zima
+[28-Apr-2025 18:32:26 Africa/Accra] Password verified successfully for member_id: 11
+[28-Apr-2025 18:32:26 Africa/Accra] Session token generated for member_id: 11
+[28-Apr-2025 19:53:16 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 19:53:16 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 19:53:16 Africa/Accra] Password verified successfully for member_id: 30
+[28-Apr-2025 19:53:16 Africa/Accra] Session token generated for member_id: 30
+[28-Apr-2025 20:18:01 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[28-Apr-2025 20:18:01 Africa/Accra] Attempting login for username: gifty2025
+[28-Apr-2025 20:18:01 Africa/Accra] Password verified successfully for member_id: 30
+[28-Apr-2025 20:18:01 Africa/Accra] Session token generated for member_id: 30
+[28-Apr-2025 21:25:28 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[28-Apr-2025 21:25:28 Africa/Accra] Attempting login for username: zima
+[28-Apr-2025 21:25:28 Africa/Accra] Password verified successfully for member_id: 11
+[28-Apr-2025 21:25:28 Africa/Accra] Session token generated for member_id: 11
+[29-Apr-2025 07:25:18 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[29-Apr-2025 07:25:18 Africa/Accra] Attempting login for username: gifty2025
+[29-Apr-2025 07:25:18 Africa/Accra] Password verified successfully for member_id: 30
+[29-Apr-2025 07:25:18 Africa/Accra] Session token generated for member_id: 30
+[30-Apr-2025 11:40:53 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 11:40:53 Africa/Accra] Attempting login for username: gifty2025
+[30-Apr-2025 11:40:53 Africa/Accra] Password verified successfully for member_id: 30
+[30-Apr-2025 11:40:53 Africa/Accra] Session token generated for member_id: 30
+[30-Apr-2025 12:00:56 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 12:00:56 Africa/Accra] Attempting login for username: gifty2025
+[30-Apr-2025 12:00:56 Africa/Accra] Password verified successfully for member_id: 30
+[30-Apr-2025 12:00:56 Africa/Accra] Session token generated for member_id: 30
+[30-Apr-2025 22:36:58 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 22:36:58 Africa/Accra] Attempting login for username: gifty2025
+[30-Apr-2025 22:36:58 Africa/Accra] Password verified successfully for member_id: 30
+[30-Apr-2025 22:47:35 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 22:47:35 Africa/Accra] Attempting login for username: gifty2025
+[30-Apr-2025 22:47:35 Africa/Accra] Password verified successfully for member_id: 30
+[30-Apr-2025 23:32:51 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 23:32:51 Africa/Accra] Attempting login for username: gifty2025
+[30-Apr-2025 23:32:51 Africa/Accra] Password verified successfully for member_id: 30
+[30-Apr-2025 23:42:31 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 23:42:31 Africa/Accra] Attempting login for username: gifty2025
+[30-Apr-2025 23:56:30 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[30-Apr-2025 23:56:30 Africa/Accra] Attempting login for username: gifty2025
+[01-May-2025 00:04:42 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[01-May-2025 00:04:42 Africa/Accra] Attempting login for username: gifty2025
+[01-May-2025 14:20:02 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[01-May-2025 14:20:02 Africa/Accra] Attempting login for username: gifty2025
+[01-May-2025 16:57:11 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[01-May-2025 16:57:11 Africa/Accra] Attempting login for username: gifty2025
+[01-May-2025 18:45:06 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[01-May-2025 18:45:06 Africa/Accra] Attempting login for username: gifty2025
+[04-May-2025 18:32:26 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[04-May-2025 18:32:26 Africa/Accra] Attempting login for username: gifty2025
+[05-May-2025 06:47:30 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[05-May-2025 06:47:30 Africa/Accra] Attempting login for username: gifty2025
+[09-May-2025 21:49:26 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => Storeworker
+    [password] => store1234
+)
+
+[09-May-2025 21:49:26 Africa/Accra] Attempting login for username: Storeworker
+[09-May-2025 21:49:26 Africa/Accra] Login failed: Invalid username or password for username: Storeworker
+[09-May-2025 21:49:34 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[09-May-2025 21:49:34 Africa/Accra] Attempting login for username: gifty2025
+[17-May-2025 12:11:48 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => SiteManager
+    [password] => 12345678
+)
+
+[17-May-2025 12:11:48 Africa/Accra] Attempting login for username: SiteManager
+[17-May-2025 12:11:48 Africa/Accra] Login failed: Invalid username or password for username: SiteManager
+[17-May-2025 12:12:00 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[17-May-2025 12:12:00 Africa/Accra] Attempting login for username: gifty2025
+[17-May-2025 12:32:51 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => iGod
+    [password] => igod2025
+)
+
+[17-May-2025 12:32:51 Africa/Accra] Attempting login for username: iGod
+[17-May-2025 12:33:02 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => arita
+    [password] => arita2025
+)
+
+[17-May-2025 12:33:02 Africa/Accra] Attempting login for username: arita
+[17-May-2025 12:33:22 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[17-May-2025 12:33:22 Africa/Accra] Attempting login for username: gifty2025
+[17-May-2025 12:33:39 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[17-May-2025 12:33:39 Africa/Accra] Attempting login for username: gifty2025
+[20-May-2025 16:23:34 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[20-May-2025 16:23:34 Africa/Accra] Attempting login for username: gifty2025
+[20-May-2025 16:39:15 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[20-May-2025 16:39:15 Africa/Accra] Attempting login for username: gifty2025
+[22-May-2025 18:13:17 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[22-May-2025 18:13:17 Africa/Accra] Attempting login for username: gifty2025
