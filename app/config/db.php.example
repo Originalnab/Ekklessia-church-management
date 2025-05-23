@@ -1,0 +1,20 @@
+<?php
+// Database configuration
+$host = 'localhost';        // Database host
+$dbname = 'ekklessia_db';  // Database name
+$username = '';            // Your database username
+$password = '';            // Your database password
+
+try {
+    // Create a PDO instance
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+
+    // Set PDO attributes
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+?>

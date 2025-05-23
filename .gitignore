@@ -1,0 +1,42 @@
+# Environment Configuration
+app/config/config.php
+app/config/db.php
+app/config/gemini_config.php
+
+# Logs and databases
+*.log
+error_log.txt
+*.sql
+!updates/*.sql
+
+# Dependencies
+vendor/
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Uploaded files
+app/uploads/members/*
+!app/uploads/members/.gitkeep
+
+# Cache files
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
