@@ -1,7 +1,5 @@
-/**
- * Fixed version of event-handlers.js with corrected object key handling
- * This script properly handles the data returned from the server and displays events in tables
- */
+// event-handlers.js for assembly events
+// Handles loading, filtering, and paginating events for all tabs
 
 document.addEventListener('DOMContentLoaded', function () {
     // Tab and filter elements
@@ -19,10 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentTab = 'upcoming';
     let currentPage = { upcoming: 1, past: 1, all: 1 };
     let pageSize = 10;
-
-    // Make these accessible globally for other scripts
-    window.currentTab = currentTab;
-    window.currentPage = currentPage;
 
     // Filter elements
     const searchInput = document.getElementById('eventSearchInput');
@@ -44,10 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load events for a tab with filters and pagination
     window.loadPaginatedTabEvents = function (tab, page) {
         currentTab = tab;
-        window.currentTab = tab;
         currentPage[tab] = page;
-        window.currentPage[tab] = page;
-
         const params = new URLSearchParams({
             tab: tab,
             page: page,
@@ -59,14 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
             endDate: endDateFilter ? endDateFilter.value : ''
         });
 
-        console.log(`Loading events for tab: ${tab}, page: ${page} with params:`, params.toString());
-
         fetch('get_events_paginated.php?' + params.toString())
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
                     console.log(`Tab ${tab}: Loaded ${data.events.length} events`);
-                    console.log('Sample event data:', data.events.length > 0 ? data.events[0] : 'No events');
 
                     // Clean up event data - trim whitespace
                     data.events.forEach(event => {
@@ -153,27 +141,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Format date as "3rd January, 2024 . 10:25 am" (UPDATED FUNCTION)
+    // Format date as "3rd January, 2024 . 10:25 am"
     function formatDateWords(dateStr) {
         if (!dateStr) return 'Not set';
 
         try {
-            // Try to create a valid date object - handle different formats
-            let date;
-
-            if (dateStr.includes('T')) {
-                // ISO format
-                date = new Date(dateStr);
-            } else if (dateStr.includes('-')) {
-                // YYYY-MM-DD HH:MM:SS format
-                const parts = dateStr.trim().split(/[- :]/);
-                date = new Date(parts[0], parts[1] - 1, parts[2], parts[3] || 0, parts[4] || 0, parts[5] || 0);
-            } else if (dateStr.includes('/')) {
-                // MM/DD/YYYY format
-                date = new Date(dateStr);
-            } else {
-                date = new Date(dateStr);
-            }
+            // Try to create a valid date object
+            const date = new Date(dateStr.trim());
 
             // Check if date is valid
             if (isNaN(date.getTime())) {
@@ -189,24 +163,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const month = monthNames[date.getMonth()];
             const year = date.getFullYear();
             const ordinal = getOrdinalSuffix(day);
-
-            // Format time
-            const hours = date.getHours();
-            const minutes = date.getMinutes();
-            const ampm = hours >= 12 ? 'pm' : 'am';
-            const hour12 = hours % 12 || 12;
-            const timePart = `${hour12}:${minutes.toString().padStart(2, '0')} ${ampm}`;
-
-            const formatted = `${day}${ordinal} ${month}, ${year} . ${timePart}`;
-            return formatted;
+            let timePart = date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: true });
+            return `${day}${ordinal} ${month}, ${year} . ${timePart.toLowerCase()}`;
         } catch (e) {
             console.error("Error formatting date:", e, dateStr);
             return dateStr; // Return original if error
         }
     }
-
-    // Make formatDateWords accessible globally for debug purposes
-    window.formatDateWords = formatDateWords;
 
     // Render pagination
     function renderPagination(total, currentPg, pgSize, pageCallback) {
@@ -268,22 +231,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Render events in the table for a tab
     function renderEventsTable(tab, events) {
-        const tableId = tableIds[tab];
-        const table = document.getElementById(tableId);
-
-        console.log(`Rendering ${events.length} events to table ID: ${tableId}`);
-
-        if (!table) {
-            console.error(`Table element #${tableId} not found`);
-            return;
-        }
+        const table = document.getElementById(tableIds[tab]);
+        if (!table) return;
 
         const tbody = table.querySelector('tbody');
-        if (!tbody) {
-            console.error(`Table body not found for table #${tableId}`);
-            return;
-        }
-
         tbody.innerHTML = '';
 
         if (!events || !events.length) {
@@ -297,76 +248,62 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Debug: Log the first event object structure
+        // Debug: Log the first event object to see its structure
         if (events.length > 0) {
             console.log('First event object:', events[0]);
-
-            // Event key mapping - this handles potential key name mismatches from database
-            const getEventName = (ev) => ev.event_name || ev.title || '';
-            const getEventType = (ev) => ev.event_type || '';
-            const getAssemblyName = (ev) => ev.assembly_name || '';
-            const getStartDate = (ev) => ev.start_date || '';
-            const getEndDate = (ev) => ev.end_date || '';
-            const getIsRecurring = (ev) => ev.is_recurring || 0;
-            const getEventId = (ev) => ev.event_id || '';
+            console.log('Sample formatted date:', formatDateWords(events[0].start_date));
         }
 
         events.forEach((ev, i) => {
-            // Map database field names to local variables
-            const eventName = ev.event_name || ev.title || '';
-            const eventType = ev.event_type || '';
-            const assemblyName = ev.assembly_name || '';
-            const startDate = ev.start_date || '';
-            const endDate = ev.end_date || '';
-            const isRecurring = ev.is_recurring == 1 ? 'Yes' : 'No';
-            const eventId = ev.event_id || '';
+            // Format dates before rendering
+            const startDateFormatted = formatDateWords(ev.start_date);
+            const endDateFormatted = formatDateWords(ev.end_date);
 
-            // Format dates
-            let startDateFormatted, endDateFormatted;
-            try {
-                startDateFormatted = formatDateWords(startDate);
-                endDateFormatted = formatDateWords(endDate);
-            } catch (e) {
-                console.error(`Error formatting dates for event ${i + 1}:`, e);
-                startDateFormatted = startDate;
-                endDateFormatted = endDate;
-            }
-
-            // Create table row
             const tr = document.createElement('tr');
-            // Set data attributes for the edit modal
-            tr.setAttribute('data-event-id', eventId);
-            tr.setAttribute('data-event-name', eventName);
-            tr.setAttribute('data-event-type-id', ev.event_type_id || '');
-            tr.setAttribute('data-event-type-name', eventType);
-            tr.setAttribute('data-assembly-id', ev.assembly_id || '');
-            tr.setAttribute('data-assembly-name', assemblyName);
-            tr.setAttribute('data-start-date', startDate);
-            tr.setAttribute('data-end-date', endDate);
-            tr.setAttribute('data-is-recurring', ev.is_recurring || 0);
-            tr.setAttribute('data-recurrence-frequency', ev.recurrence_frequency || '');
-            tr.setAttribute('data-description', ev.description || '');
-
             tr.innerHTML = `
                 <td>${i + 1}</td>
-                <td>${eventName}</td>
-                <td>${eventType}</td>
-                <td>${assemblyName}</td>
+                <td>${ev.event_name || ''}</td>
+                <td>${ev.event_type || ''}</td>
+                <td>${ev.assembly_name || ''}</td>
                 <td>${startDateFormatted}</td>
                 <td>${endDateFormatted}</td>
-                <td>${isRecurring}</td>
+                <td>${ev.is_recurring == 1 ? 'Yes' : 'No'}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn btn-primary edit-event" data-event-id="${eventId}">
+                        <button type="button" class="btn btn-primary edit-event" data-event-id="${ev.event_id}">
                             <i class="bi bi-pencil"></i>
                         </button>
-                        <button type="button" class="btn btn-danger delete-event" data-event-id="${eventId}">
+                        <button type="button" class="btn btn-danger delete-event" data-event-id="${ev.event_id}">
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
                 </td>
             `;
             tbody.appendChild(tr);
+        });
+
+        // Attach event handlers for edit and delete buttons
+        attachEventButtonHandlers();
+    }
+
+    // Attach event handlers for edit and delete buttons
+    function attachEventButtonHandlers() {
+        document.querySelectorAll('.edit-event').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const eventId = this.getAttribute('data-event-id');
+                // TODO: Implement edit event functionality
+                alert('Edit event ' + eventId + ' functionality to be implemented');
+            });
+        });
+
+        document.querySelectorAll('.delete-event').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const eventId = this.getAttribute('data-event-id');
+                if (confirm('Are you sure you want to delete this event?')) {
+                    // TODO: Implement delete event functionality
+                    alert('Delete event ' + eventId + ' functionality to be implemented');
+                }
+            });
         });
     }
 
@@ -390,6 +327,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Initial load
-    loadPaginatedTabEvents('upcoming', 1);    // Debug output showing tabs and filters are initialized
-    console.log('Event handlers initialized: tabs=', tabIds, 'currentTab=', currentTab);
+    loadPaginatedTabEvents('upcoming', 1);
 });

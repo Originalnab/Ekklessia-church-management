@@ -447,3 +447,17 @@
 )
 
 [22-May-2025 18:13:17 Africa/Accra] Attempting login for username: gifty2025
+[26-May-2025 14:20:18 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[26-May-2025 14:20:18 Africa/Accra] Attempting login for username: gifty2025
+[26-May-2025 14:25:01 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[26-May-2025 14:25:01 Africa/Accra] Attempting login for username: gifty2025

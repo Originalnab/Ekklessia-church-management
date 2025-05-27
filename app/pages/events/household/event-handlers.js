@@ -252,4 +252,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Load initial events data
     loadEventsData();
+
+    // Edit event button handler
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.edit-event-btn')) {
+            const btn = e.target.closest('.edit-event-btn');
+            const eventId = btn.getAttribute('data-id');
+            const row = btn.closest('tr');
+            if (!row) return;
+            // Extract data from table cells (adjust indices as needed)
+            const eventName = row.children[1].textContent.trim();
+            const eventType = row.children[2].textContent.trim();
+            const startDate = row.children[3].textContent.trim();
+            const endDate = row.children[4].textContent.trim();
+            const isRecurring = row.children[5].textContent.trim() === 'Yes';
+            // Populate modal form
+            document.getElementById('editEventId').value = eventId;
+            document.getElementById('editEventName').value = eventName;
+            document.getElementById('editEventType').value = '';
+            // Try to select the correct event type option
+            const eventTypeSelect = document.getElementById('editEventType');
+            for (let i = 0; i < eventTypeSelect.options.length; i++) {
+                if (eventTypeSelect.options[i].text.trim() === eventType) {
+                    eventTypeSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            // Set date/time fields using robust formatting
+            document.getElementById('editStartDate').value = formatDateForInput(startDate);
+            document.getElementById('editEndDate').value = formatDateForInput(endDate);
+            // Set recurring checkbox
+            document.getElementById('editIsRecurring').checked = isRecurring;
+            document.getElementById('editRecurrenceOptions').style.display = isRecurring ? 'block' : 'none';
+            // Show modal
+            const editModal = new bootstrap.Modal(document.getElementById('editEventModal'));
+            editModal.show();
+        }
+    });
+
+    // Helper to format date string for datetime-local input
+    function formatDateForInput(dateStr) {
+        if (!dateStr) return '';
+        // Try to parse as local string or ISO string
+        let d = new Date(dateStr);
+        if (isNaN(d.getTime())) {
+            // Try to parse as dd/mm/yyyy hh:mm or other formats if needed
+            const parts = dateStr.match(/(\d{4})[-\/]?(\d{2})[-\/]?(\d{2})[ T](\d{2}):(\d{2})/);
+            if (parts) {
+                d = new Date(parts[1], parts[2] - 1, parts[3], parts[4], parts[5]);
+            } else {
+                return '';
+            }
+        }
+        // Format as yyyy-MM-ddThh:mm
+        const pad = n => n.toString().padStart(2, '0');
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + 'T' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
 });

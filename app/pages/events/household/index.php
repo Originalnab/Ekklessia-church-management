@@ -25,7 +25,7 @@ try {
 
 // Fetch event types for the Add/Edit Event modals (only household level)
 try {
-    $stmt = $pdo->query("SELECT event_type_id, name, is_recurring, default_frequency, level FROM event_types WHERE level = 'household' ORDER BY name ASC");
+    $stmt = $pdo->query("SELECT event_type_id, name, is_recurring, default_frequency, level FROM event_types WHERE level = 1 ORDER BY name ASC");
     $event_types = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     $event_types = [];
@@ -34,7 +34,7 @@ try {
 
 // Fetch total household events count for dashboard
 try {
-    $stmt = $pdo->query("SELECT COUNT(*) as total_events FROM events WHERE level = 'household'");
+    $stmt = $pdo->query("SELECT COUNT(*) as total_events FROM events WHERE level = 1");
     $total_events = $stmt->fetch(PDO::FETCH_ASSOC)['total_events'];
 } catch (PDOException $e) {
     $_SESSION['error_message'] = "Error fetching total events: " . $e->getMessage();
@@ -46,6 +46,158 @@ $base_url = '/Ekklessia-church-management/app/pages';
 <!DOCTYPE html>
 <html lang="en">
 <?php include "../../../includes/header.php"; ?>
+<style>
+/* Tabs and table head: light mode (default) */
+.nav-tabs .nav-link {
+    color: #111 !important;
+    border: 1px solid #dee2e6;
+    margin-right: 4px;
+    border-radius: 6px 6px 0 0;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #007bff;
+}
+
+.nav-tabs .nav-link.active {
+    background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%) !important;
+    color: #fff !important;
+    border: none;
+}
+
+.table thead th,
+.table thead td,
+.table thead {
+    background: #0d6efd !important;
+    color: #fff !important;
+    font-weight: 500;
+    border: none;
+}
+
+/* Dark mode support */
+[data-bs-theme="dark"] .nav-tabs .nav-link {
+    color: #fff !important;
+    border-color: #495057;
+}
+
+[data-bs-theme="dark"] .nav-tabs .nav-link:hover {
+    border-color: #0d6efd;
+}
+
+[data-bs-theme="dark"] .nav-tabs .nav-link.active {
+    background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%) !important;
+    color: #fff !important;
+    border: none;
+}
+
+[data-bs-theme="dark"] .table thead th,
+[data-bs-theme="dark"] .table thead td,
+[data-bs-theme="dark"] .table thead {
+    background: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Household badge styling */
+.household-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #fff;
+    background: linear-gradient(90deg, #0d6efd 0%, #00d4ff 100%);
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.15);
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.household-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Dark mode adjustments for household badges */
+[data-bs-theme="dark"] .household-badge {
+    box-shadow: 0 2px 4px rgba(0, 195, 255, 0.2);
+}
+
+[data-bs-theme="dark"] .household-badge:hover {
+    box-shadow: 0 4px 6px rgba(0, 195, 255, 0.25);
+}
+
+/* Calendar styles */
+#calendar {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
+    padding: 18px 8px 8px 8px;
+    margin: 0 auto 24px auto;
+    transition: box-shadow 0.2s;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.fc .fc-daygrid-day {
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.fc .fc-daygrid-day:hover {
+    background: #f0f4ff;
+}
+
+.fc .fc-event {
+    border-radius: 8px;
+    padding: 2px 4px;
+    margin: 1px 2px;
+    border: none;
+    transition: transform 0.15s ease;
+}
+
+.fc .fc-event:hover {
+    transform: scale(1.02);
+}
+
+/* Dark mode calendar support */
+@media (prefers-color-scheme: dark) {
+    #calendar {
+        background: #23272f;
+        color: #fff;
+    }
+    .fc .fc-toolbar-title {
+        color: #fff;
+    }
+    .fc .fc-daygrid-day {
+        background: #23272f;
+    }
+    .fc .fc-daygrid-day:hover {
+        background: #2a2e38;
+    }
+}
+
+[data-bs-theme="dark"] #calendar {
+    background: #23272f;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .fc .fc-toolbar-title {
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .fc .fc-daygrid-day {
+    background: #23272f;
+}
+
+[data-bs-theme="dark"] .fc .fc-daygrid-day:hover {
+    background: #2a2e38;
+}
+</style>
 <body class="d-flex flex-column min-vh-100">
 <main class="container flex-grow-1 py-2">
     <?php if (isset($_SESSION['success_message'])): ?>

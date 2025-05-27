@@ -47,6 +47,62 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="/Ekklessia-church-management/Public/css/style.css" rel="stylesheet">
     <style>
+        /* Tabs and table head: light mode (default) */
+        .nav-tabs .nav-link,
+        .table thead th,
+        .table thead td,
+        .table thead {
+            color: #111 !important;
+        }
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%) !important;
+            color: #fff !important;
+            border: none;
+        }
+        .table thead th,
+        .table thead td,
+        .table thead {
+            background: #0d6efd !important;
+            color: #fff !important;
+            font-weight: 500;
+        }
+
+        /* Dark mode support */
+        [data-bs-theme="dark"] .nav-tabs .nav-link {
+            color: #fff !important;
+        }
+        [data-bs-theme="dark"] .nav-tabs .nav-link.active {
+            background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%) !important;
+            color: #fff !important;
+            border: none;
+        }
+        [data-bs-theme="dark"] .table thead th,
+        [data-bs-theme="dark"] .table thead td,
+        [data-bs-theme="dark"] .table thead {
+            background: #0d6efd !important;
+            color: #fff !important;
+        }
+
+        /* Zone badge styling */
+        .zone-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #fff;
+            background: linear-gradient(90deg, #0d6efd 0%, #00d4ff 100%);
+            border-radius: 999px;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.15);
+            transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .zone-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+        }
+
+        /* General card and table styles */
         .card {
             border: 1px solid #e0e0e0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -56,42 +112,12 @@ $base_url = '/Ekklessia-church-management/app/pages';
             max-height: 400px;
             overflow-y: auto;
         }
-        .modal .form-control[readonly] {
-            background-color: #e9ecef;
-            opacity: 1;
-        }
         .alert {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1050;
             max-width: 400px;
-        }
-        .badge {
-            cursor: pointer;
-        }
-        .modal-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 5px;
-        }
-        .modal-table th,
-        .modal-table td {
-            padding: 8px 12px;
-            text-align: left;
-            background-color: #f8f9fa;
-            border: none;
-        }
-        .modal-table th {
-            font-weight: 600;
-            color: #333;
-        }
-        .modal-table td {
-            color: #555;
-        }
-        .modal-table tr {
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -257,7 +283,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
             <!-- Zones Table -->
             <div class="table-responsive">
                 <table class="table table-hover align-middle">
-                    <thead class="table-light">
+                    <thead>
                         <tr>
                             <th>Zone</th>
                             <th>Description</th>
@@ -271,7 +297,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
                         <?php foreach ($zones as $zone): ?>
                             <tr>
                                 <td>
-                                    <span class="badge bg-info view-zone" data-zone-id="<?php echo $zone['zone_id']; ?>" data-bs-toggle="modal" data-bs-target="#viewZoneModal">
+                                    <span class="zone-badge view-zone" data-zone-id="<?php echo $zone['zone_id']; ?>" data-bs-toggle="modal" data-bs-target="#viewZoneModal">
                                         <?php echo htmlspecialchars($zone['name']); ?>
                                     </span>
                                 </td>

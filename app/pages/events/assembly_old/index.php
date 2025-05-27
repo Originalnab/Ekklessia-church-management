@@ -1,5 +1,6 @@
 <?php
-// Zone Events Index Page
+// Assembly Events Index Page
+// Copied and adapted from the old event system
 session_start();
 // Keep session alive for AJAX requests
 if (isset($_GET['ping'])) {
@@ -7,7 +8,7 @@ if (isset($_GET['ping'])) {
     exit;
 }
 
-$page_title = "Zone Event Management";
+$page_title = "Assembly Event Management";
 include "../../../config/db.php";
 
 if (!isset($_SESSION['member_id'])) {
@@ -19,7 +20,7 @@ if (!isset($_SESSION['member_id'])) {
 $logged_in_member_id = $_SESSION['member_id'];
 
 try {
-    $stmt = $pdo->query("SELECT event_type_id, name, is_recurring, default_frequency, level FROM event_types WHERE level = 'zone' ORDER BY name ASC");
+    $stmt = $pdo->query("SELECT event_type_id, name, is_recurring, default_frequency, level FROM event_types WHERE level = 'assembly' ORDER BY name ASC");
     $event_types = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     $event_types = [];
@@ -27,7 +28,7 @@ try {
 }
 
 try {
-    $stmt = $pdo->query("SELECT COUNT(*) as total_events FROM events WHERE level = 'zone'");
+    $stmt = $pdo->query("SELECT COUNT(*) as total_events FROM events WHERE level = 'assembly'");
     $total_events = $stmt->fetch(PDO::FETCH_ASSOC)['total_events'];
 } catch (PDOException $e) {
     $_SESSION['error_message'] = "Error fetching total events: " . $e->getMessage();
@@ -105,7 +106,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <!-- Events Table -->
     <div class="card mb-4">
         <div class="card-header">
-            <h5 class="mb-0">Zone Events</h5>
+            <h5 class="mb-0">Assembly Events</h5>
             <div class="btn-group float-end" role="group" aria-label="Event Actions">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">
                     <i class="bi bi-plus-circle"></i> Add Event
@@ -143,6 +144,21 @@ $base_url = '/Ekklessia-church-management/app/pages';
                         </select>
                     </div>
                     <div class="col-md-2">
+                        <select id="assemblyFilter" class="form-select">
+                            <option value="">All Assemblies</option>
+                            <?php
+                            try {
+                                $stmt = $pdo->query("SELECT assembly_id, name FROM assemblies WHERE status = 1 ORDER BY name ASC");
+                                $assemblies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            } catch (PDOException $e) {
+                                $assemblies = [];
+                            }
+                            foreach ($assemblies as $assembly): ?>
+                                <option value="<?= $assembly['assembly_id'] ?>"><?= htmlspecialchars($assembly['name']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
                         <input type="date" id="startDateFilter" class="form-control" placeholder="Start date">
                     </div>
                     <div class="col-md-2">
@@ -161,6 +177,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
                                     <th>#</th>
                                     <th>Event Name</th>
                                     <th>Event Type</th>
+                                    <th>Assembly</th>
                                     <th>Start Date & Time</th>
                                     <th>End Date & Time</th>
                                     <th>Recurring</th>
@@ -183,6 +200,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
                                     <th>#</th>
                                     <th>Event Name</th>
                                     <th>Event Type</th>
+                                    <th>Assembly</th>
                                     <th>Start Date & Time</th>
                                     <th>End Date & Time</th>
                                     <th>Recurring</th>
@@ -205,6 +223,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
                                     <th>#</th>
                                     <th>Event Name</th>
                                     <th>Event Type</th>
+                                    <th>Assembly</th>
                                     <th>Start Date & Time</th>
                                     <th>End Date & Time</th>
                                     <th>Recurring</th>
@@ -230,12 +249,29 @@ $base_url = '/Ekklessia-church-management/app/pages';
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addEventModalLabel">Add Zone Event</h5>
+                    <h5 class="modal-title" id="addEventModalLabel">Add Assembly Event</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="addEventForm">
-                        <input type="hidden" name="level" value="3"> <!-- 3 for zone level -->
+                        <input type="hidden" name="level" value="2"> <!-- 2 for assembly level -->
+                        <div class="mb-3">
+                            <label for="assemblySelect" class="form-label">Assembly <span class="text-danger">*</span></label>
+                            <select class="form-select" id="assemblySelect" name="assembly_id" required>
+                                <option value="">Select Assembly</option>
+                                <?php
+                                // Fetch all assemblies for the dropdown
+                                try {
+                                    $stmt = $pdo->query("SELECT assembly_id, name FROM assemblies WHERE status = 1 ORDER BY name ASC");
+                                    $assemblies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                } catch (PDOException $e) {
+                                    $assemblies = [];
+                                }
+                                foreach ($assemblies as $assembly): ?>
+                                    <option value="<?= $assembly['assembly_id'] ?>"><?= htmlspecialchars($assembly['name']) ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                         <div class="mb-3">
                             <label for="eventName" class="form-label">Event Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="eventName" name="eventName" required>
@@ -280,200 +316,171 @@ $base_url = '/Ekklessia-church-management/app/pages';
             </div>
         </div>
     </div>
-    <!-- View Event Modal -->
-    <div class="modal fade" id="viewEventModal" tabindex="-1" aria-labelledby="viewEventModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="viewEventModalLabel">View Event</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="viewEventModalBody">
-            <!-- Event details will be injected here -->
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Include Edit Event Modal -->
-    <?php /* You can include a similar edit modal as in assembly if needed */ ?>
-    <?php include '../../../includes/footer.php'; ?>
+    <?php include 'edit_event_modal.php'; ?>
+    
+       <?php include "../../../includes/footer.php"; ?>
 </main>
 
-<script src="event-handlers.js?v=<?= time() ?>"></script>
+
+<!-- Load the fixed version of the event handlers -->
+<script src="event-edit-fixed.js?v=<?= time() ?>"></script>
+<script src="event-handlers-fixed.js?v=<?= time() ?>"></script>
 <script src="pagination.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 <script>
-// Helper to format date as '3rd January, 2024 . 10:25 am'
-function formatDate(dateStr) {
-    try {
-        if (!dateStr) return 'Not set';
-        const date = new Date(dateStr);
-        if (isNaN(date.getTime())) return dateStr;
-        const day = date.getDate();
-        const monthNames = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-        const month = monthNames[date.getMonth()];
-        const year = date.getFullYear();
-        const ordinal = (day > 3 && day < 21) ? 'th' : (['st', 'nd', 'rd'][((day % 10) - 1)] || 'th');
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        const ampm = hours >= 12 ? 'pm' : 'am';
-        const hour12 = hours % 12 || 12;
-        const timePart = `${hour12}:${minutes.toString().padStart(2, '0')} ${ampm}`;
-        return `${day}${ordinal} ${month}, ${year} . ${timePart}`;
-    } catch (e) {
-        return dateStr;
-    }
-}
-// --- ZONE CALENDAR FINAL FIX ---
-let zoneCalendarInstance = null;
-function renderZoneCalendar(events) {
-    var calendarEl = document.getElementById('calendar');
-    if (!calendarEl) return;
-    // Destroy previous calendar instance if it exists
-    if (zoneCalendarInstance) {
-        zoneCalendarInstance.destroy();
-        zoneCalendarInstance = null;
-    }
-    calendarEl.innerHTML = '';
-    calendarEl.style.background = '#fff';
-    calendarEl.style.borderRadius = '18px';
-    calendarEl.style.boxShadow = '0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08)';
-    calendarEl.style.padding = '18px 8px 8px 8px';
-    calendarEl.style.margin = '0 auto 24px auto';
-    var calendarEvents = (events || []).map(ev => ({
-        id: ev.event_id,
-        title: ev.title + (ev.zone_name && ev.zone_name !== 'Not Assigned' ? ' (' + ev.zone_name + ')' : ''),
-        start: ev.start_date,
-        end: ev.end_date,
-        color: ev.is_recurring ? '#17a2b8' : '#007bff',
-        extendedProps: {
-            eventType: ev.event_type,
-            zone: ev.zone_name,
-            isRecurring: ev.is_recurring,
-            startDate: ev.start_date,
-            endDate: ev.end_date
-        }
-    }));
-    zoneCalendarInstance = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        height: 'auto',
-        aspectRatio: 1.5,
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-        },
-        events: calendarEvents,
-        eventDidMount: function(info) {
-            const start = formatDate(info.event.extendedProps.startDate);
-            const end = formatDate(info.event.extendedProps.endDate);
-            let tooltipHtml = `<div style='font-weight:bold;'>${info.event.title}</div>` +
-                `<div>Type: <b>${info.event.extendedProps.eventType || '-'}</b></div>` +
-                `<div>Zone: <b>${info.event.extendedProps.zone || '-'}</b></div>` +
-                `<div>Start: <b>${start}</b></div>` +
-                `<div>End: <b>${end}</b></div>` +
-                (info.event.extendedProps.isRecurring ? `<div><span class='badge bg-info'>Recurring</span></div>` : '');
-            new bootstrap.Tooltip(info.el, {
-                title: tooltipHtml,
-                html: true,
-                placement: 'top',
-                trigger: 'hover',
-                container: 'body'
-            });
-        },
-        eventDisplay: 'block',
-        dayMaxEventRows: 3,
-        views: {
-            dayGridMonth: { dayMaxEventRows: 3 },
-            timeGridWeek: { dayMaxEventRows: 3 },
-            timeGridDay: { dayMaxEventRows: 3 }
-        }
-    });
-    zoneCalendarInstance.render();
-}
-function loadZoneCalendarEvents() {
-    fetch('get_events_paginated.php?page=1&pageSize=1000')
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                renderZoneCalendar(data.events);
-            } else {
-                renderZoneCalendar([]);
-            }
-        })
-        .catch(() => {
-            renderZoneCalendar([]);
-        });
-}
 document.addEventListener('DOMContentLoaded', function () {
+    // Recurrence logic
+    var recurringCheckbox = document.getElementById('isRecurring');
+    var recurrenceOptions = document.getElementById('recurrenceOptions');
+    if (recurringCheckbox && recurrenceOptions) {
+        recurringCheckbox.addEventListener('change', function () {
+            recurrenceOptions.style.display = this.checked ? '' : 'none';
+        });
+    }
+
+    // Add Event form AJAX
+    var addEventForm = document.getElementById('addEventForm');
+    if (addEventForm) {
+        addEventForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var formData = new FormData(addEventForm);
+            fetch('add_event_process.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success alert
+                    var alert = document.createElement('div');
+                    alert.className = 'alert alert-success alert-dismissible position-fixed top-0 start-50 translate-middle-x mt-3';
+                    alert.style.zIndex = 1050;
+                    alert.innerHTML = '<strong>Success!</strong> ' + data.message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                    document.body.appendChild(alert);
+                    // Close modal
+                    var modal = bootstrap.Modal.getInstance(document.getElementById('addEventModal'));
+                    if (modal) modal.hide();
+                    // Reset form
+                    addEventForm.reset();
+                    if (recurrenceOptions) recurrenceOptions.style.display = 'none';
+                    // Reload events after adding
+                    if (typeof loadPaginatedTabEvents === 'function') loadPaginatedTabEvents('upcoming', 1);
+                } else {
+                    alert(data.message || 'Error adding event.');
+                }
+            })
+            .catch(() => {
+                alert('Error adding event.');
+            });
+        });
+    }
+
+    // Assembly Calendar View (FullCalendar)
+    function formatDate(dateStr) {
+        try {
+            const date = new Date(dateStr);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            let datePart = date.toLocaleDateString(undefined, options);
+            let timePart = date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: true });
+            return `${datePart} . ${timePart.toLowerCase()}`;
+        } catch (e) {
+            return dateStr;
+        }
+    }
+    function loadCalendarEvents() {
+        fetch('get_events_paginated.php?page=1&pageSize=1000')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    renderCalendar(data.events);
+                }
+            });
+    }
+    function renderCalendar(events) {
+        var calendarEl = document.getElementById('calendar');
+        if (!calendarEl) return;
+        calendarEl.innerHTML = '';
+        calendarEl.style.background = '#fff';
+        calendarEl.style.borderRadius = '18px';
+        calendarEl.style.boxShadow = '0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08)';
+        calendarEl.style.padding = '18px 8px 8px 8px';
+        calendarEl.style.margin = '0 auto 24px auto';
+        var calendarEvents = (events || []).map(ev => ({
+            id: ev.event_id,
+            title: ev.event_name + (ev.assembly_name ? ' (' + ev.assembly_name + ')' : ''),
+            start: ev.start_date,
+            end: ev.end_date,
+            color: ev.is_recurring ? '#17a2b8' : '#007bff',
+            extendedProps: {
+                eventType: ev.event_type,
+                assembly: ev.assembly_name,
+                isRecurring: ev.is_recurring,
+                startDate: ev.start_date,
+                endDate: ev.end_date
+            }
+        }));
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            height: 'auto',
+            aspectRatio: 1.5,
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+            events: calendarEvents,
+            eventDidMount: function(info) {
+                const start = formatDate(info.event.extendedProps.startDate);
+                const end = formatDate(info.event.extendedProps.endDate);
+                let tooltipHtml = `<div style='font-weight:bold;'>${info.event.title}</div>` +
+                    `<div>Type: <b>${info.event.extendedProps.eventType || '-'}</b></div>` +
+                    `<div>Assembly: <b>${info.event.extendedProps.assembly || '-'}</b></div>` +
+                    `<div>Start: <b>${start}</b></div>` +
+                    `<div>End: <b>${end}</b></div>` +
+                    (info.event.extendedProps.isRecurring ? `<div><span class='badge bg-info'>Recurring</span></div>` : '');
+                new bootstrap.Tooltip(info.el, {
+                    title: tooltipHtml,
+                    html: true,
+                    placement: 'top',
+                    trigger: 'hover',
+                    container: 'body'
+                });
+            },
+            eventDisplay: 'block',
+            dayMaxEventRows: 3,
+            views: {
+                dayGridMonth: { dayMaxEventRows: 3 },
+                timeGridWeek: { dayMaxEventRows: 3 },
+                timeGridDay: { dayMaxEventRows: 3 }
+            }
+        });
+        calendar.render();
+    }
+    // Show calendar when tab is activated
     if (document.getElementById('calendar-view-tab')) {
         document.getElementById('calendar-view-tab').addEventListener('shown.bs.tab', function () {
-            loadZoneCalendarEvents();
+            loadCalendarEvents();
         });
     }
-    // Optionally, load calendar if Calendar tab is default
-    if (document.getElementById('calendar-view').classList.contains('show')) {
-        loadZoneCalendarEvents();
-    }
 });
-// --- END ZONE CALENDAR FINAL FIX ---
 </script>
 <style>
-/* Tabs and table head: light mode (default) */
+/* Tab text color: black in light mode, white in dark mode */
 .nav-tabs .nav-link {
-    color: #111 !important;
-    border: 1px solid #dee2e6;
-    margin-right: 4px;
-    border-radius: 6px 6px 0 0;
-    transition: all 0.2s ease;
+    color: #222 !important;
 }
-
-.nav-tabs .nav-link:hover {
-    border-color: #007bff;
-}
-
 .nav-tabs .nav-link.active {
-    background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%) !important;
-    color: #fff !important;
-    border: none;
+    color: #222 !important;
+    background-color: #e9ecef !important;
 }
-
-.table thead th,
-.table thead td,
-.table thead {
-    background: #0d6efd !important;
-    color: #fff !important;
-    font-weight: 500;
-    border: none;
-}
-
-/* Dark mode support */
 [data-bs-theme="dark"] .nav-tabs .nav-link {
     color: #fff !important;
-    border-color: #495057;
 }
-
-[data-bs-theme="dark"] .nav-tabs .nav-link:hover {
-    border-color: #0d6efd;
-}
-
 [data-bs-theme="dark"] .nav-tabs .nav-link.active {
-    background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%) !important;
     color: #fff !important;
-    border: none;
+    background-color: #007bff !important;
 }
-
-[data-bs-theme="dark"] .table thead th,
-[data-bs-theme="dark"] .table thead td,
-[data-bs-theme="dark"] .table thead {
-    background: #0d6efd !important;
-    color: #fff !important;
-}
-
-/* Calendar styles */
 #calendar {
     background: #fff;
     border-radius: 18px;
@@ -482,39 +489,35 @@ document.addEventListener('DOMContentLoaded', function () {
     margin: 0 auto 24px auto;
     transition: box-shadow 0.2s;
 }
-
 .fc .fc-toolbar-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: #222;
 }
-
 .fc .fc-daygrid-day {
     border-radius: 8px;
     transition: background 0.2s;
 }
-
 .fc .fc-daygrid-day:hover {
     background: #f0f4ff;
 }
-
 .fc .fc-event {
     border-radius: 8px;
-    padding: 2px 4px;
-    margin: 1px 2px;
-    border: none;
-    transition: transform 0.15s ease;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+    font-size: 0.95rem;
+    padding: 2px 6px;
 }
-
-.fc .fc-event:hover {
-    transform: scale(1.02);
+.fc .fc-daygrid-event-dot {
+    border-radius: 50%;
 }
-
-/* Dark mode calendar support */
+.fc .fc-daygrid-day-number {
+    font-weight: 500;
+}
 @media (prefers-color-scheme: dark) {
     #calendar {
         background: #23272f;
         color: #fff;
+        box-shadow: 0 4px 24px 0 rgba(0,0,0,0.30), 0 1.5px 4px 0 rgba(0,0,0,0.18);
     }
     .fc .fc-toolbar-title {
         color: #fff;
@@ -523,24 +526,107 @@ document.addEventListener('DOMContentLoaded', function () {
         background: #23272f;
     }
     .fc .fc-daygrid-day:hover {
-        background: #2a2e38;
+        background: #2a2e38;    }
+}
+</style>
+
+<!-- Date Format Debug Tool -->
+<div id="debug-date-tool" style="position: fixed; bottom: 10px; right: 10px; z-index: 9999; background: #f8f9fa; border: 1px solid #ddd; padding: 10px; border-radius: 5px; display: none;">
+    <h5>Date Format Debug</h5>
+    <div class="mb-2">
+        <label>Test date string:</label>
+        <input type="text" id="test-date-input" class="form-control" value="<?= date('Y-m-d H:i:s') ?>">
+    </div>
+    <button id="test-format-btn" class="btn btn-sm btn-primary">Test Format</button>
+    <div id="format-result" class="mt-2 p-2 border"></div>
+    <div class="mt-2">
+        <button id="debug-log-events" class="btn btn-sm btn-info">Log Current Events</button>
+    </div>
+</div>
+
+<script>
+// Show debug tool with Ctrl+Shift+D
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+        const debugTool = document.getElementById('debug-date-tool');
+        debugTool.style.display = debugTool.style.display === 'none' ? 'block' : 'none';
+    }
+});
+
+// Test button functionality
+document.getElementById('test-format-btn')?.addEventListener('click', function() {
+    const dateStr = document.getElementById('test-date-input').value;
+    try {
+        const formattedDate = window.formatDateWords ? window.formatDateWords(dateStr) : 'formatDateWords function not available';
+        document.getElementById('format-result').innerHTML = `
+            <strong>Original:</strong> ${dateStr}<br>
+            <strong>Formatted:</strong> ${formattedDate}
+        `;
+        console.log('Test format result:', formattedDate);
+    } catch (e) {
+        document.getElementById('format-result').innerHTML = `
+            <div class="text-danger">Error: ${e.message}</div>
+        `;
+        console.error('Format error:', e);
+    }
+});
+
+// Debug events button
+document.getElementById('debug-log-events')?.addEventListener('click', function() {
+    // Find the current active tab
+    const activeTab = document.querySelector('.tab-pane.active');
+    if (!activeTab) return;
+    
+    const tabId = activeTab.id;
+    const tableId = tabId.replace('-events', 'EventsTable').replace('-view', 'View');
+    const table = document.getElementById(tableId);
+    
+    console.log('Debug: Active tab =', tabId);
+    console.log('Debug: Table ID =', tableId);
+    console.log('Debug: Table exists =', !!table);
+    
+    if (table) {
+        console.log('Debug: Table rows count =', table.querySelectorAll('tbody tr').length);
+        console.log('Debug: Table HTML =', table.querySelector('tbody').innerHTML);
+    }
+    
+    // Reload the current tab to see if it fixes the issue
+    if (window.loadPaginatedTabEvents && window.currentTab) {
+        window.loadPaginatedTabEvents(window.currentTab, window.currentPage[window.currentTab] || 1);
+        console.log('Debug: Reloaded tab', window.currentTab);
+    }
+});
+
+// Test the formatDateWords function directly
+function testDateFormatting() {
+    try {
+        const testDates = [
+            '2025-05-28 18:30:00',
+            '05/28/2025 18:30:00',
+            new Date().toISOString()
+        ];
+        
+        console.log('=== Date Format Testing ===');
+        testDates.forEach(date => {
+            try {
+                console.log(`Original: ${date}`);
+                if (window.formatDateWords) {
+                    console.log(`Formatted: ${window.formatDateWords(date)}`);
+                } else {
+                    console.warn('formatDateWords function not available yet');
+                }
+                console.log('-----------------');
+            } catch (e) {
+                console.error(`Error formatting ${date}:`, e);
+            }
+        });
+    } catch (e) {
+        console.error('Test function error:', e);
     }
 }
 
-[data-bs-theme="dark"] #calendar {
-    background: #23272f;
-    color: #fff;
-}
-
-[data-bs-theme="dark"] .fc .fc-toolbar-title {
-    color: #fff;
-}
-
-[data-bs-theme="dark"] .fc .fc-daygrid-day {
-    background: #23272f;
-}
-
-[data-bs-theme="dark"] .fc .fc-daygrid-day:hover {
-    background: #2a2e38;
-}
-</style>
+// Run test after page loads
+setTimeout(testDateFormatting, 2000);
+</script>
+</body>
+</html>
