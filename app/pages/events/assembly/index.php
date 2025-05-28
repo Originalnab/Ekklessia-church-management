@@ -36,6 +36,18 @@ $base_url = '/Ekklessia-church-management/app/pages';
 <head>
     <!-- Add FullCalendar CSS -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+    <!-- Custom calendar styles -->
+    <style>
+        .fc .fc-button-primary {
+            background-color: #007bff;
+            border-color: #0056b3;
+        }
+        .fc .fc-button-primary:not(:disabled):active,
+        .fc .fc-button-primary:not(:disabled).fc-button-active {
+            background-color: #0056b3;
+            border-color: #003d80;
+        }
+    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <main class="container flex-grow-1 py-2">
@@ -224,7 +236,31 @@ $base_url = '/Ekklessia-church-management/app/pages';
                 </div>
                 <!-- Calendar View -->
                 <div class="tab-pane fade" id="calendar-view" role="tabpanel">
-                    <div id="assemblyCalendar" style="min-height: 700px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"></div>
+                    <!-- Calendar Filters -->
+                    <div class="mb-3" id="calendarFilters">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <label for="startDateFilter" class="form-label">Start Date</label>
+                                <input type="date" id="startDateFilter" class="form-control" placeholder="Start date">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="endDateFilter" class="form-label">End Date</label>
+                                <input type="date" id="endDateFilter" class="form-control" placeholder="End date">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="levelFilter" class="form-label">Event Level</label>
+                                <select id="levelFilter" class="form-select">
+                                    <option value="">All Levels</option>
+                                    <option value="0">National</option>
+                                    <option value="1">Assembly</option>
+                                    <option value="2">Zone</option>
+                                    <option value="3">Household</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Calendar Container -->
+                    <div id="assemblyCalendar" style="min-height: 700px;"></div>
                 </div>
             </div>
         </div>
@@ -671,7 +707,45 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-<script src="assembly-calendar.js"></script>
+<script src="../calendar-utils.js"></script> 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize calendar when tab is shown
+        document.getElementById('calendar-view-tab')?.addEventListener('shown.bs.tab', function () {
+            const calendarEl = document.getElementById('assemblyCalendar');
+            if (!calendarEl) return;
+
+            if (window.assemblyCalendar) {
+                window.assemblyCalendar.destroy();
+            }
+
+            // Initialize the calendar with assembly-specific options
+            window.assemblyCalendar = initializeCalendar(calendarEl, {
+                eventClick: function(info) {
+                    // Load event details when an event is clicked
+                    const eventId = info.event.id;
+                    loadEventForView(eventId);
+                }
+            });
+
+            // Initialize filters with assembly context
+            initializeFilters(window.assemblyCalendar, {
+                level: 1 // Assembly level
+            });
+
+            // Enable dark mode support
+            initializeDarkMode();
+
+            // Render the calendar
+            window.assemblyCalendar.render();
+        });
+
+        // Initialize immediately if calendar tab is active
+        if (document.getElementById('calendar-view').classList.contains('show')) {
+            document.getElementById('calendar-view-tab').dispatchEvent(new Event('shown.bs.tab'));
+        }
+    });
+</script>
 <style>
 #assemblyCalendar {
     background: #fff;

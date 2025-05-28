@@ -1,10 +1,23 @@
 <?php
-require_once '../auth/auth_middleware.php';
-checkAuth();
-
-if ($_SESSION['function_id'] != 8) {
-    header("Location: ../auth/login.php");
-    exit;
+require_once __DIR__ . '/../auth/auth_middleware.php';
+// Fetch assembly name for the presiding elder
+$assemblyName = '';
+if (isset($_SESSION['member_id'])) {
+    require_once '../../config/config.php';
+    $stmt = $pdo->prepare("SELECT a.name FROM assemblies a JOIN members m ON a.assembly_id = m.assemblies_id WHERE m.member_id = ?");
+    $stmt->execute([$_SESSION['member_id']]);
+    $assemblyName = $stmt->fetchColumn();
+}
+if (isset($_SESSION['first_name']) && isset($_SESSION['role_name']) && isset($_SESSION['show_welcome']) && $_SESSION['show_welcome']) {
+    $firstName = htmlspecialchars($_SESSION['first_name']);
+    $assemblyDisplay = $assemblyName ? '('.htmlspecialchars($assemblyName).')' : '';
+    echo '<div style="position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:2000;width:100%;max-width:500px;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-radius:0 0 12px 12px;" class="text-center">'
+        . '<div class="alert alert-success alert-dismissible fade show m-0" role="alert" style="font-size:1.1rem;">'
+        . '<strong>Welcome, Elder ' . $firstName . '!</strong> You are logged in as Presiding Elder' . $assemblyDisplay . '. '
+        . '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>'
+        . '</div>'
+        . '</div>';
+    unset($_SESSION['show_welcome']);
 }
 
 // Fetch dashboard data

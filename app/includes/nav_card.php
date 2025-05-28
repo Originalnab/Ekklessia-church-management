@@ -36,11 +36,16 @@ $base_url = '/Ekklessia-church-management/app/pages';
                 <i class="bi bi-globe-americas text-info"></i>
                 <span>Zones</span>
             </a>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2">
+        </div>        <div class="col-6 col-md-4 col-lg-2">
             <a href="<?= $base_url ?>/roles/index.php" class="nav-link-btn">
                 <i class="bi bi-person-gear text-secondary"></i>
                 <span>Roles</span>
+            </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+            <a href="<?= $base_url ?>/events/view/index.php" class="nav-link-btn">
+                <i class="bi bi-calendar-event text-info"></i>
+                <span>Events</span>
             </a>
         </div>
     </div>

@@ -304,7 +304,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <?php include '../../includes/header.php'; ?>
     <main class="container flex-grow-1 py-2">
         <!-- Navigation Card -->
-        <?php include '../../includes/nav_card.php'; ?>
+        <?php include '../../includes/nav_shepherd.php'; ?>
 
         <!-- Shepherd Dashboard Card -->
         <div class="card shadow">

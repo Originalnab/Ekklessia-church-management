@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Only fetch role-related information
         $stmt = $pdo->prepare("
-            SELECT m.member_id, m.password, mr.role_id, r.role_name, r.hierarchy_level 
+            SELECT m.member_id, m.password, m.first_name, mr.role_id, r.role_name, r.hierarchy_level 
             FROM members m 
             LEFT JOIN member_role mr ON m.member_id = mr.member_id AND mr.is_primary = 1
             LEFT JOIN roles r ON mr.role_id = r.role_id
@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role_id'] = $user['role_id'];
             $_SESSION['role_name'] = $user['role_name'];
             $_SESSION['hierarchy_level'] = $user['hierarchy_level'];
+            $_SESSION['first_name'] = $user['first_name'] ?? '';
+            $_SESSION['show_welcome'] = true;
 
             // Check for multiple roles
             $countStmt = $pdo->prepare("SELECT COUNT(*) FROM member_role WHERE member_id = ?");
@@ -59,22 +61,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($roleCount > 1) {
                 header("Location: /Ekklessia-church-management/app/pages/dashboard/multi_role_dashboard.php");
             } else {
-                // Single role - redirect based on role_id
-                switch ($user['role_id']) {
-                    case 4: // Shepherd
-                        header("Location: /Ekklessia-church-management/app/pages/dashboard/shepherd_home.php");
-                        break;
-                    case 3: // Presiding Elder
-                        header("Location: /Ekklessia-church-management/app/pages/dashboard/presiding_elder_home.php");
-                        break;
-                    case 2: // Zone Director
-                        header("Location: /Ekklessia-church-management/app/pages/dashboard/tpd_director_home.php");
-                        break;
-                    case 1: // EXCO
-                        header("Location: /Ekklessia-church-management/app/pages/dashboard/exco_home.php");
-                        break;
-                    default:
-                        header("Location: /Ekklessia-church-management/app/pages/dashboard/member_home.php");
+                // Single role - redirect based on primary role_id from member_role
+                if ($user['role_id'] == 4) { // Shepherd (primary)
+                    header("Location: /Ekklessia-church-management/app/pages/dashboard/shepherd_home.php");
+                } elseif ($user['role_id'] == 8) { // Presiding Elder (primary)
+                    header("Location: /Ekklessia-church-management/app/pages/dashboard/presiding_elder_home.php");
+                } elseif ($user['role_id'] == 2) { // Zone Director
+                    header("Location: /Ekklessia-church-management/app/pages/dashboard/tpd_director_home.php");
+                } elseif ($user['role_id'] == 1) { // EXCO
+                    header("Location: /Ekklessia-church-management/app/pages/dashboard/exco_home.php");
+                } else {
+                    header("Location: /Ekklessia-church-management/app/pages/dashboard/member_home.php");
                 }
             }
             exit;

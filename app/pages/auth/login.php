@@ -53,54 +53,165 @@ if (isset($_SESSION['member_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Ekklessia Church Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
         .header-text {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
         }
         .header-text h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: black !important;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .header-text p {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.3rem;
+            color: #34495e;
+            font-weight: 300;
         }
-        .container {
-            margin-bottom: 50px;
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .login-card:hover {
+            transform: translateY(-5px);
+        }
+        .login-card .card-body {
+            padding: 3rem;
+        }
+        .login-card h2 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+        }
+        .form-label {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .input-group-text {
+            background: transparent;
+            border: 2px solid #e9ecef;
+            border-right: none;
+        }
+        .password-toggle {
+            cursor: pointer;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-left: none;
+            background: transparent;
+        }
+        .btn-primary {
+            background-color: #4a90e2;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .btn-primary:hover {
+            background-color: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+        .btn-link {
+            color: #4a90e2;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .btn-link:hover {
+            color: #357abd;
+            text-decoration: underline;
         }
         footer {
-            margin-top: 50px;
+            margin-top: auto;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .alert {
+            border-radius: 8px;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container">
         <div class="header-text">
             <h1>Epistles of Christ Ministry</h1>
             <p>Apprenticing the Nations unto full Maturity in Christ</p>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <div class="card-body p-4">
-                        <h2>Login</h2>
+            <div class="col-md-5">
+                <div class="login-card">
+                    <div class="card-body">
+                        <h2>Welcome Back</h2>
                         <?php if (isset($_SESSION['error'])): ?>
-                            <div class="alert alert-danger"><?= htmlspecialchars($_SESSION['error']) ?></div>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="fas fa-exclamation-circle me-2"></i>
+                                <?= htmlspecialchars($_SESSION['error']) ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
                             <?php unset($_SESSION['error']); ?>
                         <?php endif; ?>
                         <form method="POST" action="login_process.php">
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <span class="password-toggle" onclick="togglePassword()">
+                                        <i class="fas fa-eye" id="toggleIcon"></i>
+                                    </span>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
-                            <a href="forgot_credentials.php" class="btn btn-link">Forgot Username/Password?</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-sign-in-alt me-2"></i>Login
+                            </button>
+                            <div class="text-center">
+                                <a href="forgot_credentials.php" class="btn-link">
+                                    <i class="fas fa-key me-1"></i>Forgot Username/Password?
+                                </a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -109,5 +220,19 @@ if (isset($_SESSION['member_id'])) {
     </div>
     <?php include '../../includes/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
 </body>
 </html>

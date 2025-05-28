@@ -52,28 +52,3 @@ foreach ($accessRules as $path => $allowedRoles) {
     }
 }
 */
-
-// Helper function to get appropriate dashboard URL based on role
-function getDashboardByRole($roleId) {
-    switch ($roleId) {
-        case 4:
-            return '/Ekklessia-church-management/app/pages/dashboard/shepherd_home.php';
-        case 3:
-            return '/Ekklessia-church-management/app/pages/dashboard/presiding_elder_home.php';
-        case 2:
-            return '/Ekklessia-church-management/app/pages/dashboard/tpd_director_home.php';
-        case 1:
-            return '/Ekklessia-church-management/app/pages/dashboard/exco_home.php';
-        default:
-            // If user has multiple roles, show multi-role dashboard
-            if (isset($_SESSION['member_id'])) {
-                $pdo = require __DIR__ . '/../../config/db.php';
-                $stmt = $pdo->prepare("SELECT COUNT(*) FROM member_role WHERE member_id = ?");
-                $stmt->execute([$_SESSION['member_id']]);
-                if ($stmt->fetchColumn() > 1) {
-                    return '/Ekklessia-church-management/app/pages/dashboard/multi_role_dashboard.php';
-                }
-            }
-            return '/Ekklessia-church-management/app/pages/dashboard/member_home.php';
-    }
-}
