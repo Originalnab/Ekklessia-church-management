@@ -1,0 +1,149 @@
+Session Management Strategy Analysis
+Current Session Structure
+You already have basic sessions established:
+member_id
+role_id
+Basic authentication data
+Proposed Hybrid Approach
+1. Keep Existing Core Sessions
+Maintain current login sessions
+Don't disrupt existing functionality
+Keep authentication flow intact
+2. Context-Based Additional Data
+When accessing calendar/event views:
+
+Load additional context data as needed
+Fetch zone/assembly/household IDs dynamically
+Store temporarily for the view session
+Benefits of This Approach
+Minimal Disruption
+
+Existing code continues to work
+No need to refactor authentication
+Preserves current functionality
+Enhanced Flexibility
+
+Load context data only when needed
+Fresh data for calendar views
+Better handling of role changes
+Better Performance
+
+No unnecessary session data
+Load data on demand
+Reduced session size
+Implementation Strategy
+Keep Current Login Process
+
+Maintain existing session variables
+No changes to authentication flow
+Preserve current security checks
+Add Context Layer
+
+Create context loading function
+Use in calendar/event views
+Cache results as needed
+Event View Implementation
+
+Load context when entering event views
+Clear context when leaving
+Refresh as needed
+This approach gives us the best of both worlds - stability in the existing system and flexibility for the new features. Would you like to proceed with implementation details?
+
+Implementation Steps for Event View Feature
+1. Create Directory Structure
+/app/pages/events/
+├── view/
+│   ├── index.php         # Main event viewer
+│   ├── partials/
+│   │   ├── filters.php   # Filter components
+│   │   └── calendar.php  # Calendar view
+│   └── js/
+       └── event-viewer.js # Frontend logic
+
+       2. Create Context Loading Function
+First, create a new file for context management:
+<?php
+app/functions/user_context.php
+
+# Implementation Steps for Event View Feature
+
+## 1. Create Directory Structure
+```
+/app/pages/events/
+├── view/
+│   ├── index.php         # Main event viewer
+│   ├── partials/
+│   │   ├── filters.php   # Filter components
+│   │   └── calendar.php  # Calendar view
+│   └── js/
+       └── event-viewer.js # Frontend logic
+```
+
+## 2. Create Context Loading Function
+First, create a new file for context management:
+```php
+app/functions/user_context.php
+```
+
+## 3. Implementation Steps
+
+### Step 1: User Context Function
+Create function to load user's current context while keeping existing sessions:
+- member_id (existing)
+- role_id (existing)
+- Add dynamic context loading for:
+  - zone_id
+  - assembly_id
+  - household_id
+
+### Step 2: Create Event View Page
+1. Build main view page structure
+2. Include existing auth checks
+3. Load user context
+4. Setup calendar view
+5. Add filter components
+
+### Step 3: Create Event Query Function
+1. Build base query using context data
+2. Add filter conditions:
+   - Date range
+   - Event type
+   - Event level (based on user context)
+
+### Step 4: Frontend Development
+1. Create filter interface
+2. Setup FullCalendar integration
+3. Add AJAX calls for data fetching
+4. Implement view switching (calendar/list)
+
+### Step 5: Testing Flow
+1. Test with users having:
+   - Only member_id (new users)
+   - Role assigned
+   - Full context (role, household, etc.)
+2. Verify event visibility rules
+3. Test filter functionality
+
+## 4. File Creation Order
+
+1. `user_context.php` - Context management
+2. `index.php` - Main view page
+3. `filters.php` - Filter component
+4. `calendar.php` - Calendar partial
+5. `event-viewer.js` - Frontend logic
+
+## 5. Integration Points
+
+1. Use existing session data:
+```php
+$_SESSION['member_id']
+$_SESSION['role_id']
+```
+
+2. Add context loading where needed:
+```php
+require_once '../../../functions/user_context.php';
+$userContext = getUserContext($_SESSION['member_id']);
+```
+
+Would you like me to start with implementing any specific component?

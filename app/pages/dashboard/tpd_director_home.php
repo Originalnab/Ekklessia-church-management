@@ -105,7 +105,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,22 +115,45 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <link href="/Ekklessia-church-management/Public/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .card {
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
+        :root {
+            --card-bg-dark: hsla(267, 57.90%, 3.70%, 0.42);
         }
-        @media (prefers-color-scheme: dark) {
-            .card {
-                border: 1px solid #4a90e2 !important;
-                box-shadow: 0 4px 12px -2px rgba(74, 144, 226, 0.5), 
-                            0 0 20px rgba(74, 144, 226, 0.3) !important;
-            }
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            min-height: 100vh;
+        }
+        [data-bs-theme="dark"] .card {
+            background: var(--card-bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-bs-theme="dark"] .stat-card .card-title,
+        [data-bs-theme="dark"] .stat-card .card-text {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        [data-bs-theme="dark"] .tpd-stats h3,
+        [data-bs-theme="dark"] .tpd-stats h6 {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        [data-bs-theme="dark"] .stats-overview {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        [data-bs-theme="dark"] .chart-container canvas {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
         }
     </style>
-</head>
-<body class="d-flex flex-column min-vh-100">
     <?php include '../../includes/header.php'; ?>
+</head>
+<body>
+    <?php include '../../includes/nav_card.php'; ?>
     <main class="container flex-grow-1 py-2">
         <!-- Navigation Card -->
         <div class="card nav-card">

@@ -461,3 +461,73 @@
 )
 
 [26-May-2025 14:25:01 Africa/Accra] Attempting login for username: gifty2025
+[28-May-2025 06:52:00 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[28-May-2025 06:52:00 Africa/Accra] Attempting login for username: zima
+[31-May-2025 16:01:05 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[31-May-2025 16:01:05 Africa/Accra] Attempting login for username: zima
+[03-Jun-2025 12:47:10 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[03-Jun-2025 12:47:10 Africa/Accra] Attempting login for username: zima
+[03-Jun-2025 13:03:14 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[03-Jun-2025 13:03:14 Africa/Accra] Attempting login for username: gifty2025
+[03-Jun-2025 13:14:45 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => iGod
+    [password] => igod2025
+)
+
+[03-Jun-2025 13:14:45 Africa/Accra] Attempting login for username: iGod
+[03-Jun-2025 13:15:42 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[03-Jun-2025 13:15:42 Africa/Accra] Attempting login for username: zima
+[03-Jun-2025 13:25:18 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[03-Jun-2025 13:25:18 Africa/Accra] Attempting login for username: gifty2025
+[03-Jun-2025 14:10:34 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => zima
+    [password] => zima2025
+)
+
+[03-Jun-2025 14:10:34 Africa/Accra] Attempting login for username: zima
+[03-Jun-2025 14:10:58 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[03-Jun-2025 14:10:58 Africa/Accra] Attempting login for username: gifty2025
+[04-Jun-2025 04:13:25 Africa/Accra] Login attempt - POST data: Array
+(
+    [username] => gifty2025
+    [password] => gifty2025
+)
+
+[04-Jun-2025 04:13:25 Africa/Accra] Attempting login for username: gifty2025

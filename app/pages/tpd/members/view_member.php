@@ -1,7 +1,7 @@
 <!-- View Member Modal -->
 
 <div class="modal fade" id="viewMemberModal" tabindex="-1" aria-labelledby="viewMemberModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content view-member-modal">
             <div class="modal-header bg-primary text-white">
                 <h5 class="modal-title" id="viewMemberModalLabel">Member Profile</h5>
@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="card">
-                    <div class="card-header text-center">
+                    <div class="card-header text-center border-0 bg-transparent">
                         <img src="" alt="Profile Photo" class="rounded-circle profile-photo-large" id="viewMemberPhoto">
                         <h4 class="mt-2" id="viewMemberName"></h4>
                     </div>
@@ -156,12 +156,16 @@
                                             <td id="viewMemberReferral"></td>
                                         </tr>
                                         <tr>
+                                            <th>Household</th>
+                                            <td id="viewMemberHousehold"></td>
+                                        </tr>
+                                        <tr>
                                             <th>Group</th>
-                                            <td id="viewMemberGroup"></td>
+                                            <td id="viewMemberGroupName"></td>
                                         </tr>
                                         <tr>
                                             <th>Shepherd</th>
-                                            <td id="viewMemberShepherd"></td>
+                                            <td id="viewMemberShepherdName"></td>
                                         </tr>
                                     </tbody>
                                 </table>

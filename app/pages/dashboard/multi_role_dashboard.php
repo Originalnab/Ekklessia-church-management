@@ -64,9 +64,61 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<?php include "../../includes/header.php"; ?>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <?php include '../../includes/header.php'; ?>
+    <style>
+        :root {
+            --card-bg-dark: hsla(267, 57.90%, 3.70%, 0.42);
+        }
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            min-height: 100vh;
+        }
+        [data-bs-theme="dark"] .card {
+            background: var(--card-bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .role-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dark mode enhancements */
+        [data-bs-theme="dark"] .card {
+            background: var(--card-bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .role-card {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-bs-theme="dark"] .role-card h5,
+        [data-bs-theme="dark"] .role-card p {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        [data-bs-theme="dark"] .role-description {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        [data-bs-theme="dark"] .role-actions .btn {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        [data-bs-theme="dark"] .role-actions .btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        </style>
+    </head>
 <body>
+    <?php include '../../includes/nav_card.php'; ?>
+
     <div class="container py-4">
         <?php include "../../includes/alerts.php"; ?>
 

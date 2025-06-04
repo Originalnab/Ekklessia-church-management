@@ -325,7 +325,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device=width, initial-scale=1.0">
@@ -335,6 +335,67 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <link href="/Ekklessia-church-management/Public/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --card-bg-dark: hsla(267, 57.90%, 3.70%, 0.42);
+        }
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            min-height: 100vh;
+        }
+        [data-bs-theme="dark"] .card {
+            background: var(--card-bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        [data-bs-theme="dark"] .card-header h6 {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }        [data-bs-theme="dark"] .table {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        [data-bs-theme="dark"] .table th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 1);
+            font-weight: 600;
+        }
+
+        [data-bs-theme="dark"] .table td {
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        [data-bs-theme="dark"] .table tbody tr:hover td {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-bs-theme="dark"] .table tbody tr td a {
+            color: #93c5fd !important;
+        }
+
+        [data-bs-theme="dark"] .text-muted,
+        [data-bs-theme="dark"] .card-text,
+        [data-bs-theme="dark"] .card-body {
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        [data-bs-theme="dark"] .card-header {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Ensure chart labels are visible in dark mode */
+        [data-bs-theme="dark"] #genderDistributionChart,
+        [data-bs-theme="dark"] #ageDistributionChart,
+        [data-bs-theme="dark"] #householdDistributionChart,
+        [data-bs-theme="dark"] #memberGrowthChart {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .dashboard-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
         .card {
             border: 1px solid #e0e0e0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -637,12 +698,12 @@ $base_url = '/Ekklessia-church-management/app/pages';
                 
                 <!-- Elders Table -->
                 <div class="card mb-3">
-                    <div class="card-header gradient-table-header-secondary text-white ">
+                    <div class="card-header gradient-table-header-secondary text-white">
                         <h6 class="mb-0">Elders</h6>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-hover mb-0">
+                            <table class="table table-hover table-dark-theme mb-0">
                                 <thead>
                                     <tr>
                                         <th style="width: 50px;"></th>
@@ -684,12 +745,12 @@ $base_url = '/Ekklessia-church-management/app/pages';
                 
                 <!-- Shepherds Table -->
                 <div class="card mb-3">
-                    <div class="card-header gradient-table-header-success text-white ">
+                    <div class="card-header gradient-table-header-success text-white">
                         <h6 class="mb-0">Shepherds</h6>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-hover mb-0">
+                            <table class="table table-hover table-dark-theme mb-0">
                                 <thead>
                                     <tr>
                                         <th style="width: 50px;"></th>
@@ -736,7 +797,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive scrollable-table">
-                            <table class="table table-hover mb-0">
+                            <table class="table table-hover table-dark-theme mb-0">
                                 <thead>
                                     <tr>
                                         <th style="width: 50px;"></th>
@@ -821,14 +882,40 @@ $base_url = '/Ekklessia-church-management/app/pages';
                 datasets: [{
                     data: genderCounts,
                     backgroundColor: genderGradients,
-                    borderWidth: 0
+                    borderWidth: 0,
+                    hoverOffset: 4
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'bottom'
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleFont: {
+                            size: 12
+                        },
+                        bodyFont: {
+                            size: 12
+                        },
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value * 100) / total).toFixed(1);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
                     }
                 },
                 cutout: '70%'
@@ -845,7 +932,8 @@ $base_url = '/Ekklessia-church-management/app/pages';
             createGradient('#8b5cf6', '#7c3aed'),
             createGradient('#ec4899', '#db2777'),
             createGradient('#f43f5e', '#e11d48'),
-            createGradient('#f97316', '#ea580c')
+            createGradient('#f97316', '#ea580c'),
+            createGradient('#94a3b8', '#64748b')
         ];
 
         const ageChart = new Chart(document.getElementById('ageDistributionChart'), {
@@ -855,14 +943,40 @@ $base_url = '/Ekklessia-church-management/app/pages';
                 datasets: [{
                     data: ageCounts,
                     backgroundColor: ageGradients,
-                    borderWidth: 0
+                    borderWidth: 0,
+                    hoverOffset: 4
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'bottom'
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleFont: {
+                            size: 12
+                        },
+                        bodyFont: {
+                            size: 12
+                        },
+                        padding: 12,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((value * 100) / total).toFixed(1);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
+                        }
                     }
                 }
             }
@@ -873,8 +987,8 @@ $base_url = '/Ekklessia-church-management/app/pages';
         const householdLabels = householdData.map(item => item.household_name || 'No household');
         const householdCounts = householdData.map(item => item.member_count);
         const householdColors = householdData.map((_, index) => {
-            const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316', '#6366f1'];
-            return colors[index % colors.length];
+            const hue = (index * 137.5) % 360;
+            return `hsl(${hue}, 70%, 60%)`;
         });
 
         const householdChart = new Chart(document.getElementById('householdDistributionChart'), {
@@ -882,7 +996,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
             data: {
                 labels: householdLabels,
                 datasets: [{
-                    label: 'Number of Members',
+                    label: 'Members per Household',
                     data: householdCounts,
                     backgroundColor: householdColors,
                     borderWidth: 1
@@ -904,7 +1018,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
                             text: 'Household'
                         },
                         ticks: {
-                            autoSkip: false,
+                            autoSkip: true,
                             maxRotation: 45,
                             minRotation: 45
                         }
@@ -920,7 +1034,10 @@ $base_url = '/Ekklessia-church-management/app/pages';
 
         // Member Growth Over Time Chart
         const memberGrowthData = <?php echo $member_growth_json; ?>;
-        const growthLabels = memberGrowthData.map(item => item.month);
+        const growthLabels = memberGrowthData.map(item => {
+            const date = new Date(item.month + '-01');
+            return date.toLocaleDateString('default', { month: 'short', year: 'numeric' });
+        });
         const growthCounts = memberGrowthData.map(item => item.count);
 
         const memberGrowthChart = new Chart(document.getElementById('memberGrowthChart'), {
@@ -933,7 +1050,13 @@ $base_url = '/Ekklessia-church-management/app/pages';
                     fill: true,
                     backgroundColor: 'rgba(99, 102, 241, 0.2)',
                     borderColor: 'rgba(99, 102, 241, 1)',
-                    tension: 0.4
+                    tension: 0.4,
+                    pointBackgroundColor: 'rgba(99, 102, 241, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(99, 102, 241, 1)',
+                    pointRadius: 4,
+                    pointHoverRadius: 6
                 }]
             },
             options: {
@@ -943,20 +1066,54 @@ $base_url = '/Ekklessia-church-management/app/pages';
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Number of New Members'
+                            text: 'Number of New Members',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            stepSize: 1
                         }
                     },
                     x: {
                         title: {
                             display: true,
-                            text: 'Month'
+                            text: 'Month',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 45
                         }
                     }
                 },
                 plugins: {
                     legend: {
-                        display: false
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleFont: {
+                            size: 12
+                        },
+                        bodyFont: {
+                            size: 12
+                        },
+                        padding: 12,
+                        displayColors: false
                     }
+                },
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'x',
+                    intersect: false
                 }
             }
         });

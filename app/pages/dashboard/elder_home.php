@@ -202,7 +202,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,60 +211,36 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .nav-card {
-            background-color: #ffffff;
-            border: none;
-            box-shadow: 0 -2px 6px -2px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            margin-top: -30px;
-            position: relative;
-            top: -10px;
+        :root {
+            --card-bg-dark: hsla(267, 57.90%, 3.70%, 0.42);
         }
-        .nav-card .nav-link-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            text-decoration: none;
-            color: #333;
-            padding: 15px;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.2s;
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            min-height: 100vh;
         }
-        .nav-link-btn:hover {
-            background-color: #f1f3f5;
-            transform: scale(1.05);
+        [data-bs-theme="dark"] .card {
+            background: var(--card-bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .nav-link-btn i {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
+        [data-bs-theme="dark"] .stat-overview {
+            color: rgba(255, 255, 255, 0.9) !important;
         }
-        .nav-link-btn span {
-            font-size: 0.9rem;
-            font-weight: 500;
+        [data-bs-theme="dark"] .elder-stats h3,
+        [data-bs-theme="dark"] .elder-stats h6 {
+            color: rgba(255, 255, 255, 0.9) !important;
         }
-        [data-bs-theme="dark"] .nav-card {
-            background-color: var(--card-bg-dark);
+        [data-bs-theme="dark"] .table {
+            color: rgba(255, 255, 255, 0.9);
         }
-        [data-bs-theme="dark"] .nav-link-btn {
-            color: #e0e0e0;
+        [data-bs-theme="dark"] .table th {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 1);
         }
-        [data-bs-theme="dark"] .nav-link-btn:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        [data-bs-theme="dark"] .member-list td {
+            color: rgba(255, 255, 255, 0.9);
         }
-        .card {
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-        @media (prefers-color-scheme: dark) {
-            .card {
-                border: 1px solid #4a90e2 !important;
-                box-shadow: 0 4px 12px -2px rgba(74, 144, 226, 0.5), 
-                            0 0 20px rgba(74, 144, 226, 0.3) !important;
-            }
+        [data-bs-theme="dark"] .household-info {
+            color: #93c5fd !important;
         }
     </style>
 </head>

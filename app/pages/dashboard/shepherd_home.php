@@ -260,7 +260,7 @@ $base_url = '/Ekklessia-church-management/app/pages';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -270,12 +270,40 @@ $base_url = '/Ekklessia-church-management/app/pages';
     <link href="/Ekklessia-church-management/Public/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .card {
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
+        :root {
+            --card-bg-dark: hsla(267, 57.90%, 3.70%, 0.42);
         }
-        
+
+        [data-bs-theme="dark"] body {
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            min-height: 100vh;
+        }
+
+        /* Table-specific dark mode styles */
+        [data-bs-theme="dark"] .table {
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        [data-bs-theme="dark"] .table td,
+        [data-bs-theme="dark"] .table th {
+            color: inherit !important;
+        }
+
+        [data-bs-theme="dark"] .table-hover tbody tr:hover {
+            color: #ffffff !important;
+            background-color: rgba(66, 153, 225, 0.1) !important;
+        }
+
+        [data-bs-theme="dark"] .table thead th {
+            background-color: rgba(45, 55, 72, 0.9) !important;
+            color: #ffffff !important;
+        }
+
+        /* Ensure text center alignment doesn't affect color */
+        [data-bs-theme="dark"] .text-center {
+            color: inherit !important;
+        }
+
         .profile-photo {
             width: 40px;
             height: 40px;
@@ -283,6 +311,19 @@ $base_url = '/Ekklessia-church-management/app/pages';
             border-radius: 50%;
             border: 2px solid #007bff;
         }
+        .dashboard-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
         .dashboard-section {
             margin-bottom: 20px;
         }

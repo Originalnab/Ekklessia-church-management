@@ -56,17 +56,21 @@ if (isset($_SESSION['member_id'])) {
 }
 ?>
 
+<?php if (!isset($page_title)) $page_title = "Ekklessia Church Management"; ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekklessia Management System - <?php echo isset($page_title) ? $page_title : "Dashboard"; ?></title>
+    <title><?php echo $page_title; ?></title>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/Ekklessia-church-management/public/assets/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="/Ekklessia-church-management/public/css/style.css" rel="stylesheet">
+    <link href="/Ekklessia-church-management/public/css/members.css" rel="stylesheet">
     
     <style>
         .top-header {
@@ -371,8 +375,9 @@ if (isset($_SESSION['member_id'])) {
     </main>
 </div>
 
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery first, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="/Ekklessia-church-management/public/assets/js/script.js"></script>
 

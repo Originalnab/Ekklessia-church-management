@@ -474,4 +474,34 @@ function showAlert(type, message) {
     `;
     document.body.appendChild(alertContainer);
 }
+
+// Add this function for consistent badge coloring
+function getGradientColor(assemblyId) {
+    // Use the same color logic as in index.php
+    const gradientColors = [
+        'linear-gradient(45deg, #007bff, #00d4ff)',
+        'linear-gradient(45deg, #28a745, #6fcf97)',
+        'linear-gradient(45deg, #ffc107, #ffca28)',
+        'linear-gradient(45deg, #17a2b8, #4fc3f7)',
+        'linear-gradient(45deg, #dc3545, #ff6b6b)',
+        'linear-gradient(45deg, #6c757d, #b0b5b9)',
+        'linear-gradient(45deg, #ff6f61, #ff9f84)',
+        'linear-gradient(45deg, #9c27b0, #ce93d8)',
+        'linear-gradient(45deg, #ff9800, #ffb74d)',
+        'linear-gradient(45deg, #e91e63, #f06292)',
+        'linear-gradient(45deg, #4caf50, #81c784)',
+        'linear-gradient(45deg, #3f51b5, #7986cb)'
+    ];
+    if (!window.assemblyMap) return 'linear-gradient(45deg, #6c757d, #b0b5b9)';
+    if (assemblyId === 'N/A' || !assemblyId || window.assemblyMap[assemblyId] === 'N/A') {
+        return 'linear-gradient(45deg, #6c757d, #b0b5b9)';
+    }
+    // Hash the assemblyId to get a consistent color
+    let hash = 0;
+    for (let i = 0; i < String(assemblyId).length; i++) {
+        hash = String(assemblyId).charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % gradientColors.length;
+    return gradientColors[index];
+}
 </script>

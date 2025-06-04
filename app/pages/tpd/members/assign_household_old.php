@@ -69,15 +69,15 @@ try {
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="shepherd-<?= $member['member_id'] ?>" class="form-label">Assign Direct Shepherd <span class="text-danger">*</span></label>
-                                    <select class="form-select" id="shepherd-<?= $member['member_id'] ?>" name="shepherd_id" required>
-                                        <option value="">Select a Shepherd</option>
-                                        <?php foreach ($shepherds as $shepherd): ?>
-                                            <?php if ($shepherd['assembly_name'] === $member['assembly_name']): ?>
-                                                <option value="<?= $shepherd['member_id'] ?>"><?= htmlspecialchars($shepherd['first_name'] . ' ' . $shepherd['last_name']) ?></option>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                    </select>
+                                    <label class="form-label">Select Role(s)</label>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="isLeader-<?= $member['member_id'] ?>" name="is_leader" value="1">
+                                        <label class="form-check-label" for="isLeader-<?= $member['member_id'] ?>">Household Leader</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="isAssistant-<?= $member['member_id'] ?>" name="is_assistant" value="1">
+                                        <label class="form-check-label" for="isAssistant-<?= $member['member_id'] ?>">Assistant Leader</label>
+                                    </div>
                                 </div>
                                 <div class="d-flex justify-content-end">
                                     <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
@@ -91,3 +91,44 @@ try {
         </div>
     </div>
 <?php endforeach; ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle role checkbox logic for each member's modal
+    document.querySelectorAll('[id^="assignHouseholdModal-"]').forEach(modal => {
+        const memberId = modal.id.split('-')[1];
+        const leaderCheckbox = modal.querySelector(`#isLeader-${memberId}`);
+        const assistantCheckbox = modal.querySelector(`#isAssistant-${memberId}`);
+        
+        // Prevent user from selecting both leader and assistant roles
+        leaderCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                assistantCheckbox.checked = false;
+            }
+        });
+        
+        assistantCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                leaderCheckbox.checked = false;
+            }
+        });
+
+        // Form validation before submission
+        modal.querySelector('form').addEventListener('submit', function(e) {
+            const householdSelect = this.querySelector('select[name="household_id"]');
+            
+            if (!householdSelect.value) {
+                e.preventDefault();
+                alert('Please select a household.');
+                return;
+            }
+
+            if (!leaderCheckbox.checked && !assistantCheckbox.checked) {
+                e.preventDefault();
+                alert('Please select at least one role (Leader or Assistant).');
+                return;
+            }
+        });
+    });
+});
+</script>

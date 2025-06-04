@@ -8,10 +8,17 @@
     color: var(--footer-text);
     transition: all 0.3s ease;
   }
-
   [data-bs-theme="dark"] .custom-footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 -4px 20px rgba(102, 16, 242, 0.1);
+    background-color: var(--card-bg-dark, #1a1a2e);
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  [data-bs-theme="dark"] .custom-footer a,
+  [data-bs-theme="dark"] .custom-footer p,
+  [data-bs-theme="dark"] .custom-footer span {
+    color: rgba(255, 255, 255, 0.9) !important;
   }
 
   .custom-footer {
@@ -41,14 +48,24 @@
     background-color: rgba(0,0,0,0.1);
     color: #000;
   }
-
   .footer-links a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    opacity: 0.9;
   }
 
   .footer-links a:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+
+  [data-bs-theme="dark"] .footer-links a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  [data-bs-theme="dark"] .footer-links a {
     color: #6610f2;
   }
 </style>

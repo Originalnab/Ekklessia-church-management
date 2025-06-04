@@ -463,3 +463,95 @@ Processed values - household_id: 12, leader_id: 8, assistant_ids: Array
 )
 
 Success: Assignment completed for household 12
+Timestamp: 2025-06-04 03:33:33
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 32
+        )
+
+    [household_id] => 3
+    [leader_id] => 32
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 32
+)
+
+Processed values - household_id: 3, leader_id: 32, assistant_ids: Array
+(
+    [0] => 32
+)
+
+Success: Assignment completed for household 3
+Timestamp: 2025-06-04 03:33:54
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 81
+        )
+
+    [household_id] => 10
+    [leader_id] => 61
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 81
+)
+
+Processed values - household_id: 10, leader_id: 61, assistant_ids: Array
+(
+    [0] => 81
+)
+
+Success: Assignment completed for household 10
+Timestamp: 2025-06-04 03:34:14
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 1
+        )
+
+    [household_id] => 11
+    [leader_id] => 1
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 1
+)
+
+Processed values - household_id: 11, leader_id: 1, assistant_ids: Array
+(
+    [0] => 1
+)
+
+Success: Assignment completed for household 11
+Timestamp: 2025-06-04 03:34:30
+Raw POST data: Array
+(
+    [assistant_ids] => Array
+        (
+            [0] => 67
+        )
+
+    [household_id] => 6
+    [leader_id] => 12
+)
+
+assistant_ids is set and is an array: Array
+(
+    [0] => 67
+)
+
+Processed values - household_id: 6, leader_id: 12, assistant_ids: Array
+(
+    [0] => 67
+)
+
+Success: Assignment completed for household 6
